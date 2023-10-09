@@ -15,6 +15,7 @@
 		61AF91112AD46783009563E3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91102AD46783009563E3 /* HomeView.swift */; };
 		61AF91132AD4678C009563E3 /* PromiseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91122AD4678C009563E3 /* PromiseView.swift */; };
 		61AF91152AD46793009563E3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91142AD46793009563E3 /* ProfileView.swift */; };
+		61AF91182AD46BF5009563E3 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91172AD46BF5009563E3 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		61AF91102AD46783009563E3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = ../../../../../../../Documents/HomeView.swift; sourceTree = "<group>"; };
 		61AF91122AD4678C009563E3 /* PromiseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromiseView.swift; path = ../../../../../../../Documents/PromiseView.swift; sourceTree = "<group>"; };
 		61AF91142AD46793009563E3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = ../../../../../../../Documents/ProfileView.swift; sourceTree = "<group>"; };
+		61AF91172AD46BF5009563E3 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = ../../../../../../../Documents/ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		61AF90D32AD3D19F009563E3 /* ToMeetToMe */ = {
 			isa = PBXGroup;
 			children = (
+				61AF91162AD46BE3009563E3 /* Extensions */,
 				61AF90D42AD3D19F009563E3 /* ToMeetToMeApp.swift */,
 				61AF90D62AD3D19F009563E3 /* ContentView.swift */,
 				61AF90D82AD3D1A0009563E3 /* Assets.xcassets */,
@@ -85,6 +88,14 @@
 				61AF91142AD46793009563E3 /* ProfileView.swift */,
 			);
 			path = CoreViews;
+			sourceTree = "<group>";
+		};
+		61AF91162AD46BE3009563E3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				61AF91172AD46BF5009563E3 /* ColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +173,7 @@
 				61AF910E2AD46734009563E3 /* MyTabView.swift in Sources */,
 				61AF91132AD4678C009563E3 /* PromiseView.swift in Sources */,
 				61AF91152AD46793009563E3 /* ProfileView.swift in Sources */,
+				61AF91182AD46BF5009563E3 /* ColorExtension.swift in Sources */,
 				61AF90D52AD3D19F009563E3 /* ToMeetToMeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
