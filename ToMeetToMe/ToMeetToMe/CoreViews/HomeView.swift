@@ -8,12 +8,22 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     var body: some View {
         ZStack{
-            Text("Home")
+            NavigationView {
+                MainView()
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarItems(leading: Text("To Meet To Me").font(.largeTitle).bold(), trailing: Button(action: {print("click")}, label: {Image("ic_bell")})
+                    )
+
+                
+            }
         }
     }
 }
+
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {

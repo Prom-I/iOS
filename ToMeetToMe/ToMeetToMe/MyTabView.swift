@@ -22,15 +22,19 @@ struct MyTabView: View {
                      Image("ic_promise")
                      Text("약속")
                  }
-                 .tag(0)
+                 .tag(1)
             ProfileView()
                  .tabItem {
                      Image("ic_person")
                      Text("내 정보")
                  }
-                 .tag(0)
+                 .tag(2)
+                 
         }
         .accentColor(.mint) // 아이콘 클릭했을때 아이콘과 텍스트 색깔 민트로 설정
+        
+//        .overlay(Rectangle().foregroundColor(.gray).frame(height:1), alignment: .bottom)
+        
     }
 }
 
