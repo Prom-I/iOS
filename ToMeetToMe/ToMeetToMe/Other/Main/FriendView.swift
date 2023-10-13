@@ -17,7 +17,7 @@ struct FriendView: View {
         VStack(spacing: 4){
             Image(self.friend.profileImageString)
                 .resizable()
-                .frame(width: 50, height: 50)
+                .frame(width: 60, height: 60)
                 .clipShape(Circle())
                 .overlay(Circle().stroke(lineWidth: 1))
                     .foregroundColor(.gray)
@@ -31,5 +31,6 @@ struct FriendView: View {
 struct FriendView_Previews: PreviewProvider {
     static var previews: some View {
         FriendView(friend: Friend(profileImageString: "1", nickname: "유진"))
+            .previewLayout(.fixed(width: 70, height: 90))
     }
 }

@@ -14,10 +14,8 @@ struct HomeView: View {
             NavigationView {
                 MainView()
                     .navigationBarTitleDisplayMode(.inline)
-                    .navigationBarItems(leading: Text("To Meet To Me").font(.largeTitle).bold(), trailing: Button(action: {print("click")}, label: {Image("ic_bell")})
+                    .navigationBarItems(leading: Text("To Meet To Me").font(.title).bold().foregroundColor(Color.mintColor), trailing: Button(action: {print("click")}, label: {Image("ic_bell")})
                     )
-
-                
             }
         }
     }

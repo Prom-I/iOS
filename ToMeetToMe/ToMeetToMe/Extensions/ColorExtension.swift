@@ -9,6 +9,7 @@ import SwiftUI
 
 extension Color {
     static let mintColor = Color("mint")
+    static let lightMint = Color("lightMint")
     static let lightGray = Color("lightGray")
     static let circleBorderGray = Color("circleBorderGray")
 }

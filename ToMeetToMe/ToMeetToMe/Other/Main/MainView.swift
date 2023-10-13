@@ -9,8 +9,10 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        FriendGridView()
-      
+        VStack(spacing: 2){
+            FriendGridView()
+            CalendarView()
+        }
     }
 }
 

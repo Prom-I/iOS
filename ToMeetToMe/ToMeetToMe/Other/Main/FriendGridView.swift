@@ -18,13 +18,13 @@ struct FriendGridView: View {
         // 스크롤뷰로 감싸서 스크롤 가능하도록 설정
         HStack(alignment: .top) {
             ScrollView(.horizontal, showsIndicators: false) {   // 가로 스크롤
-                LazyHGrid(rows: [GridItem(.fixed(3))], content: {
+                LazyHGrid(rows: [GridItem(.flexible())], content: {
                     ForEach(friendArray, content: { (friend: Friend) in
                         
                         FriendView(friend: friend)
                     })
                 })
-                .frame(height: 80)
+                .frame(height: 84)
             }
             
             Button(action: {
@@ -34,7 +34,7 @@ struct FriendGridView: View {
             {
                 ZStack {
                     Circle()
-                        .frame(width: 50, height: 50)
+                        .frame(width: 60, height: 60)
                     
                     Text("+")
                     .font(Font.custom("Noto Sans", size: 20))
@@ -54,5 +54,6 @@ struct FriendGridView: View {
 struct FriendGridView_Previews: PreviewProvider {
     static var previews: some View {
         FriendGridView()
+            .previewLayout(.fixed(width: 434, height: 100))
     }
 }
