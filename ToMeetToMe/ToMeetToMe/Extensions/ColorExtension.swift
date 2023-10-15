@@ -5,11 +5,12 @@
 //  Created by 조유진 on 2023/10/10.
 //
 
-import UIKit
+import SwiftUI
 
-extension UIColor {
-    @nonobjc class var mint: UIColor {
-        return UIColor(red: 0.0 / 255.0, green: 193.0 / 255.0, blue: 193.0 / 255.0, alpha: 1.0)
-    }
-    
+extension Color {
+    static let mintColor = Color("mint")
+    static let lightMint = Color("lightMint")
+    static let lightGray = Color("lightGray")
+    static let circleBorderGray = Color("circleBorderGray")
+    static let gray1 = Color("gray1")
 }
