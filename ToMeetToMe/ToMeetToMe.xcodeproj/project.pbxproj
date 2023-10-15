@@ -22,6 +22,10 @@
 		61AF91402AD6299D009563E3 /* FriendGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF913F2AD6299D009563E3 /* FriendGridView.swift */; };
 		61AF91422AD63802009563E3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91412AD63802009563E3 /* CalendarView.swift */; };
 		61AF91442AD67C54009563E3 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91432AD67C54009563E3 /* View+extensions.swift */; };
+		86AE6AF82ADBCE050092A1FE /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6AF72ADBCE050092A1FE /* AddFriendView.swift */; };
+		86AE6AFA2ADBCE1E0092A1FE /* AddFriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6AF92ADBCE1E0092A1FE /* AddFriendListCell.swift */; };
+		86AE6AFD2ADBCE350092A1FE /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6AFC2ADBCE350092A1FE /* BackButton.swift */; };
+		86AE6AFF2ADBCE3F0092A1FE /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6AFE2ADBCE3F0092A1FE /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		61AF913F2AD6299D009563E3 /* FriendGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendGridView.swift; sourceTree = "<group>"; };
 		61AF91412AD63802009563E3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		61AF91432AD67C54009563E3 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
+		86AE6AF72ADBCE050092A1FE /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
+		86AE6AF92ADBCE1E0092A1FE /* AddFriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendListCell.swift; sourceTree = "<group>"; };
+		86AE6AFC2ADBCE350092A1FE /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		86AE6AFE2ADBCE3F0092A1FE /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +140,8 @@
 		61AF91372AD540F0009563E3 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				86AE6AFB2ADBCE240092A1FE /* Components */,
+				86AE6AF62ADBCDF00092A1FE /* AddFriend */,
 				61AF91382AD62868009563E3 /* Main */,
 			);
 			path = Other;
@@ -146,6 +156,24 @@
 				61AF91412AD63802009563E3 /* CalendarView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		86AE6AF62ADBCDF00092A1FE /* AddFriend */ = {
+			isa = PBXGroup;
+			children = (
+				86AE6AF72ADBCE050092A1FE /* AddFriendView.swift */,
+				86AE6AF92ADBCE1E0092A1FE /* AddFriendListCell.swift */,
+			);
+			path = AddFriend;
+			sourceTree = "<group>";
+		};
+		86AE6AFB2ADBCE240092A1FE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				86AE6AFC2ADBCE350092A1FE /* BackButton.swift */,
+				86AE6AFE2ADBCE3F0092A1FE /* SearchBar.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,18 +246,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86AE6AFA2ADBCE1E0092A1FE /* AddFriendListCell.swift in Sources */,
 				61AF90D72AD3D19F009563E3 /* ContentView.swift in Sources */,
 				61AF913C2AD62886009563E3 /* MainView.swift in Sources */,
 				61AF91422AD63802009563E3 /* CalendarView.swift in Sources */,
 				61AF912A2AD47776009563E3 /* HomeView.swift in Sources */,
+				86AE6AF82ADBCE050092A1FE /* AddFriendView.swift in Sources */,
 				61AF91272AD4775B009563E3 /* MyTabView.swift in Sources */,
 				61AF91352AD53E07009563E3 /* Friend.swift in Sources */,
+				86AE6AFD2ADBCE350092A1FE /* BackButton.swift in Sources */,
 				61AF912C2AD4778A009563E3 /* PromiseView.swift in Sources */,
 				61AF91402AD6299D009563E3 /* FriendGridView.swift in Sources */,
 				61AF912E2AD477A4009563E3 /* ProfileView.swift in Sources */,
 				61AF91322AD4783B009563E3 /* ColorExtension.swift in Sources */,
 				61AF913E2AD628FC009563E3 /* FriendView.swift in Sources */,
 				61AF91442AD67C54009563E3 /* View+extensions.swift in Sources */,
+				86AE6AFF2ADBCE3F0092A1FE /* SearchBar.swift in Sources */,
 				61AF90D52AD3D19F009563E3 /* ToMeetToMeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
