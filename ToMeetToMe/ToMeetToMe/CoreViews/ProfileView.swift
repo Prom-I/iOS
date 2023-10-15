@@ -10,7 +10,15 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         ZStack{
-            Text("Profile")
+            NavigationView {
+                MyPageView()
+                    .navigationBarItems(trailing: HStack {
+                        Button(action: {print("click")}, label: {Image(systemName:"gearshape")                  .foregroundColor(.black)})
+                        
+                        Button(action: {print("click")}, label: {Image("ic_bell")})
+                        }
+                    )
+            }
         }
     }
 }

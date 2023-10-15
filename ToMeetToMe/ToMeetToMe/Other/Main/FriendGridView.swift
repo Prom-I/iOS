@@ -27,23 +27,37 @@ struct FriendGridView: View {
                 .frame(height: 84)
             }
             
-            Button(action: {
-                print("click")
-                addFriendButtonIsActive = true
-            })
-            {
+            NavigationLink(destination:AddFriendView()){
                 ZStack {
                     Circle()
                         .frame(width: 60, height: 60)
                     
                     Text("+")
-                    .font(Font.custom("Noto Sans", size: 20))
-                    .foregroundColor(Color.mintColor)
-                    .frame(width: 10.8, height: 24.3, alignment: .topLeading)
+                        .font(Font.custom("Noto Sans", size: 20))
+                        .foregroundColor(Color.mintColor)
+                        .frame(width: 10.8, height: 24.3, alignment: .topLeading)
                 }
-               
+                
             }.tint(Color.lightGray)
                 .padding(.top, 4)
+            
+//            Button(action: {
+//                print("click")
+//                addFriendButtonIsActive = true
+//            })
+//            {
+//                ZStack {
+//                    Circle()
+//                        .frame(width: 60, height: 60)
+//
+//                    Text("+")
+//                    .font(Font.custom("Noto Sans", size: 20))
+//                    .foregroundColor(Color.mintColor)
+//                    .frame(width: 10.8, height: 24.3, alignment: .topLeading)
+//                }
+//
+//            }.tint(Color.lightGray)
+//                .padding(.top, 4)
     
         }.padding(14)
           
