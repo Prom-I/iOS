@@ -73,7 +73,7 @@ struct CalendarView: View {
         let numberOfRows = Int(ceil(Double(daysInMonth + firstWeekday) / 7.0))  // 해당 달이 몇주인지
         let visibleDaysOfNextMonth = numberOfRows * 7 - (daysInMonth + firstWeekday)
         
-        return ScrollView{ LazyVGrid(columns: Array(repeating: GridItem(), count: 7)) {
+        return ScrollView{ LazyVGrid(columns: Array(repeating: GridItem(), count: 7), spacing: 4) {
             ForEach(-firstWeekday ..< daysInMonth + visibleDaysOfNextMonth, id: \.self) { index in
                 Group {
                     if index > -1 && index < daysInMonth {  // index : 0 ~ 해당 달의 일 수 - 1일 때
@@ -89,7 +89,7 @@ struct CalendarView: View {
                         
                         CellView(day: day, isCurrentMonthDay: false)
                     }
-                }
+                }.padding(0)
                 .onTapGesture {
                     if 0 <= index && index < daysInMonth {
                         let date = getDate(for: index)
@@ -97,7 +97,7 @@ struct CalendarView: View {
                     }
                 }
             }
-            }
+        }.padding(.horizontal, 8)
         }
     }
     
@@ -138,19 +138,45 @@ struct CalendarView: View {
         }
         
         fileprivate var body: some View {
-            VStack(spacing: 4) {
+            VStack(spacing:4) {
                 Circle()
                     .fill(backgroundColor)
                     .overlay(Text(String(day))).font(.system(size: 14)) // oo일 텍스트
                     .foregroundColor(textColor)
-                    .frame(width: 30, height: 30)
+                    .frame(width: 24, height: 24)
+                    .padding(.vertical, 2)
                 
-                RoundedRectangle(cornerSize: .init(width: 6, height: 6))  // 계획 들어갈 공간 대체
-                    .fill(Color.lightGray)
+                ZStack(alignment: .top) {
+//                    RoundedRectangle(cornerSize: .init(width: 6, height: 6))  // 계획 들어갈 공간 대체
+//                        .fill(Color.white)
+//                        .zIndex(0)
+                        
+                    VStack(spacing: 4) {
+                        Rectangle()
+                            .fill(Color.lightMint)
+                            .frame(height:16)
+                            .cornerRadius(2)
+                        Rectangle()
+                            .fill(Color.lightMint)
+                            .frame(height:16)
+                            .cornerRadius(2)
+                        Rectangle()
+                            .fill(Color.lightMint)
+                            .frame(height:16)
+                            .cornerRadius(2)
+                      
+                    }.padding(.horizontal, 2)
+                }
                 
-            
+                Spacer()
+                
             }
-            .frame(height: 100)
+            .frame(width: 58,height: 120)
+            .background(clicked ? Color.gray1 : Color.clear)
+       
+            
+            
+
         }
     }
 }

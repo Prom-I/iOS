@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MyTabView: View {
+    init() {
+      UITabBar.appearance().backgroundColor = .white
+    }
     var body: some View {
         // 탭뷰
         TabView{
@@ -34,9 +37,7 @@ struct MyTabView: View {
                  
         }
         .accentColor(.mint) // 아이콘 클릭했을때 아이콘과 텍스트 색깔 민트로 설정
-        .toolbarBackground(.blue, for: .tabBar)
-        .toolbarBackground(.visible, for: .tabBar)
-        .toolbarColorScheme(.dark, for: .tabBar)
+       
         
     }
 }
