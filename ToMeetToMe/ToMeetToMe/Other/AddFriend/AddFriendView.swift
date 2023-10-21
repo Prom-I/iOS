@@ -18,22 +18,32 @@ struct AddFriendView: View {
                 SearchBar(text: $searchText)
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                 
-                List {
-                    ForEach(array.filter { friend in
-                        !(searchText.isEmpty) && friend.nickname.localizedCaseInsensitiveContains(searchText)
-                    }) { friend in
-                        AddFriendListCell(user: friend)
+//                List {
+//                    ForEach(array.filter { friend in
+//                        !(searchText.isEmpty) && friend.nickname.localizedCaseInsensitiveContains(searchText)
+//                    }) { friend in
+//                        AddFriendListCell(user: friend)
+//                    }
+//
+//                } //리스트의 스타일 수정
+//                .listStyle(PlainListStyle())
+                
+                
+                ScrollView(.vertical) {
+                    LazyVStack(alignment: .leading, spacing: 15) {
+                        ForEach(array.filter { friend in
+                            !(searchText.isEmpty) && friend.nickname.localizedCaseInsensitiveContains(searchText)
+                        }) { friend in
+                            AddFriendListCell(user: friend)
+                        }
                     }
-
-                } //리스트의 스타일 수정
-                .listStyle(PlainListStyle())
+                }.padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                
+                
                 
             }
             .frame(width: geometry.size.width, // 화면의 너비만큼 설정
                    height: geometry.size.height)
-            .onTapGesture {
-                hideKeyboard()
-            }
             .navigationBarTitle("친구 추가", displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -50,15 +60,6 @@ struct AddFriendView: View {
     }
     
 }
-
-//화면 터치시 키보드 숨김
-#if canImport(UIKit)
-extension View {
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-    }
-}
-#endif
 
 struct AddFriendView_Previews: PreviewProvider {
     static var previews: some View {
