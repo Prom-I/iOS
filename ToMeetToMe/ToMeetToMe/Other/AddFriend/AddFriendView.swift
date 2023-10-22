@@ -42,7 +42,6 @@ struct AddFriendView: View {
                 }
             }
             .navigationBarBackButtonHidden(true)
-
             .navigationBarItems(leading: BackButton(btnColor: .mint))
 
             

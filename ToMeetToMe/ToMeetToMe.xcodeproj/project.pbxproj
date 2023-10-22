@@ -45,6 +45,7 @@
 		86AE6B192AE517690092A1FE /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B182AE517690092A1FE /* MyPageView.swift */; };
 		86AE6B1B2AE521B90092A1FE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B1A2AE521B90092A1FE /* CardView.swift */; };
 
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		86AE6B072ADBD65B0092A1FE /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		86AE6B0B2ADBE4A20092A1FE /* AddMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberView.swift; sourceTree = "<group>"; };
 		86AE6B0D2ADBE7A90092A1FE /* AddMemberGrideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberGrideView.swift; sourceTree = "<group>"; };
+
 
 		86AE6B102AE50FFE0092A1FE /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
 		86AE6B142AE514860092A1FE /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
@@ -190,8 +192,10 @@
 			isa = PBXGroup;
 			children = (
 
+
 				86AE6B0F2AE50AB80092A1FE /* MyPage */,
 				619FADA42AE4EA6200AB5511 /* Group */,
+
 				86AE6B002ADBD0AF0092A1FE /* AddGroup */,
 				86AE6AFB2ADBCE240092A1FE /* Components */,
 				86AE6AF62ADBCDF00092A1FE /* AddFriend */,
@@ -231,7 +235,9 @@
 				86AE6B032ADBD3F40092A1FE /* CancleButton.swift */,
 				86AE6B072ADBD65B0092A1FE /* CheckBoxButton.swift */,
 
+
 				86AE6B1A2AE521B90092A1FE /* CardView.swift */,
+
 
 
 			);
@@ -248,6 +254,7 @@
 			);
 			path = AddGroup;
 			sourceTree = "<group>";
+
 
 		86AE6B0F2AE50AB80092A1FE /* MyPage */ = {
 			isa = PBXGroup;
@@ -332,6 +339,7 @@
 			files = (
 				86AE6B022ADBD1130092A1FE /* AddGroupView.swift in Sources */,
 
+
 				86AE6B1B2AE521B90092A1FE /* CardView.swift in Sources */,
 
 				86AE6AFA2ADBCE1E0092A1FE /* AddFriendListCell.swift in Sources */,
@@ -339,7 +347,9 @@
 				61AF90D72AD3D19F009563E3 /* ContentView.swift in Sources */,
 				86AE6B082ADBD65B0092A1FE /* CheckBoxButton.swift in Sources */,
 
+
 				619FADA62AE4EA8700AB5511 /* PromiseListView.swift in Sources */,
+
 
 				86AE6B0E2ADBE7A90092A1FE /* AddMemberGrideView.swift in Sources */,
 				61AF913C2AD62886009563E3 /* MainView.swift in Sources */,
@@ -355,6 +365,7 @@
 				86AE6B192AE517690092A1FE /* MyPageView.swift in Sources */,
 				86AE6B112AE50FFE0092A1FE /* FriendListView.swift in Sources */,
 
+
 				61AF912C2AD4778A009563E3 /* PromiseView.swift in Sources */,
 				61AF91402AD6299D009563E3 /* FriendGridView.swift in Sources */,
 				61AF912E2AD477A4009563E3 /* ProfileView.swift in Sources */,
@@ -367,9 +378,11 @@
 				61AF91442AD67C54009563E3 /* View+extensions.swift in Sources */,
 				86AE6AFF2ADBCE3F0092A1FE /* SearchBar.swift in Sources */,
 
+
 				619FADA82AE4F74F00AB5511 /* Schedule.swift in Sources */,
 				619FADAC2AE506D700AB5511 /* Date+extensions.swift in Sources */,
 				619FADAA2AE4F9DA00AB5511 /* String+extensions.swift in Sources */,
+
 
 				61AF90D52AD3D19F009563E3 /* ToMeetToMeApp.swift in Sources */,
 			);
