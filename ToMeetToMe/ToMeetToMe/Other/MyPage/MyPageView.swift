@@ -15,8 +15,7 @@ struct MyPageView: View {
     var body: some View {
         GeometryReader { geometry in // GeometryReader를 사용하여 화면 크기를 얻음
             VStack(spacing: 30){
-                Button(action: {
-                }) {
+                NavigationLink(destination:SettingProfileView()){
                     HStack {
                         Spacer()
                         Text("프로필 수정")
@@ -25,10 +24,10 @@ struct MyPageView: View {
                         Spacer()
                     }
                     .padding(8)
-                }
-                .background(Color.lightGray)
-                .cornerRadius(7)
-                .padding(EdgeInsets(top: 10, leading: 20, bottom: 0, trailing: 20))
+                    
+                }.background(Color.lightGray)
+                    .cornerRadius(7)
+                    .padding(EdgeInsets(top: 10, leading: 20, bottom: 0, trailing: 20))
                 
                 HStack(spacing:18){
                     Spacer() // 왼쪽에 공백 추가
