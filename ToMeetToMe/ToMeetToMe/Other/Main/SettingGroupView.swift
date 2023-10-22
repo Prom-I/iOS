@@ -63,3 +63,4 @@ struct SettingGroupView_Previews: PreviewProvider {
         SettingGroupView()
     }
 }
+

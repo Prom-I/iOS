@@ -36,9 +36,10 @@ struct GroupListView: View {
                     }
                 }
                 .listStyle(.plain)
-                MainButtonView(buttonTitle: "그룹 생성")
-                    .padding(.bottom, 30)
-                
+                NavigationLink(destination:AddGroupView()){
+                    MainButtonView(buttonTitle: "그룹 생성")
+                        .padding(.bottom, 30)
+                }
             }
             .navigationTitle("그룹")
             .navigationBarTitleDisplayMode(.inline)
@@ -53,3 +54,4 @@ struct GroupListView_Previews: PreviewProvider {
         GroupListView()
     }
 }
+

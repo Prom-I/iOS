@@ -102,3 +102,4 @@ struct SettingProfileView_Previews: PreviewProvider {
         SettingProfileView()
     }
 }
+
