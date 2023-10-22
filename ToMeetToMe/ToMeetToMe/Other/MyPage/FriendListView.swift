@@ -1,49 +1,56 @@
 //
-//  AddFriendView.swift
+//  FriendListView.swift
 //  ToMeetToMe
 //
-//  Created by songyeon on 2023/10/11.
+//  Created by songyeon on 2023/10/22.
 //
+
 
 import SwiftUI
 
-struct AddFriendView: View {
+struct FriendListView: View {
     
     @State private var searchText = ""
     @State var array = Friend.frinedArray
     
     var body: some View {
-        GeometryReader { geometry in // GeometryReader를 사용하여 화면 크기를 얻음
+        
+        GeometryReader { geometry in
+            
             VStack{
                 SearchBar(text: $searchText)
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
 
+                Header(text:"친구 목록 \(array.count)")
+                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                
                 ScrollView(.vertical) {
                     LazyVStack(alignment: .leading, spacing: 15) {
                         ForEach(array.filter { friend in
-                            !(searchText.isEmpty) && friend.nickname.localizedCaseInsensitiveContains(searchText)
+                            searchText.isEmpty || friend.nickname.localizedCaseInsensitiveContains(searchText)
                         }) { friend in
-                            AddFriendListCell(user: friend)
+                            FriendListCell(user: friend)
                         }
                     }
-                }.padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                
-                
+                }
+                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                 
             }
             .frame(width: geometry.size.width, // 화면의 너비만큼 설정
                    height: geometry.size.height)
-            .navigationBarTitle("친구 추가", displayMode: .inline)
+            .navigationBarTitle("친구 목록", displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("친구 추가")
+                    Text("친구 목록")
                         .font(.system(size: 20))
                         .fontWeight(.regular)
                 }
             }
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: BackButton(btnColor: .mint))
-
+            .navigationBarItems(leading: BackButton(btnColor:.black),trailing: Button(action: {
+            }) {
+                Image(systemName: "plus")
+            }.foregroundColor(Color.black))
             
         }
         
@@ -51,10 +58,12 @@ struct AddFriendView: View {
     
 }
 
-struct AddFriendView_Previews: PreviewProvider {
+struct FriendListView_Previews: PreviewProvider {
     static var previews: some View {
-        AddFriendView()
+        FriendListView()
     }
 }
+
+
 
 
