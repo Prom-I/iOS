@@ -13,8 +13,10 @@ struct CheckBoxButton: View {
 
     var body: some View {
         Button(action: {
-            isChecked.toggle()
-
+            if (!isChecked){
+                isChecked = true
+            }
+            
         }) {
             HStack {
                 Image(systemName: isChecked ? "checkmark.circle.fill" : "circle")
