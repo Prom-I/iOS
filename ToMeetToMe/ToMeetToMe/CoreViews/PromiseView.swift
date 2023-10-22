@@ -10,7 +10,8 @@ import SwiftUI
 struct PromiseView: View {
     var body: some View {
         ZStack{
-            Text("Promise")
+            GroupListView()
+            
         }
     }
 }
