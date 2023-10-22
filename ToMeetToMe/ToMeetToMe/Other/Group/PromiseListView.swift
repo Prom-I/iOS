@@ -37,7 +37,7 @@ struct PromiseListView: View {
             }
             .navigationBarTitle("프로미팀", displayMode: .inline).font(.system(size: 17))
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: BackButton(), trailing: Button(action: {print("click")}){
+            .navigationBarItems(leading: BackButton(btnColor: .black), trailing: Button(action: {print("click")}){
                 Image("ic_three_dots")
             })
             .frame(width: geometry.size.width, height: geometry.size.height)

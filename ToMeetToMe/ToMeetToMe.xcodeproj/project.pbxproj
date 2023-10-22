@@ -39,13 +39,10 @@
 		86AE6B082ADBD65B0092A1FE /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B072ADBD65B0092A1FE /* CheckBoxButton.swift */; };
 		86AE6B0C2ADBE4A20092A1FE /* AddMemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B0B2ADBE4A20092A1FE /* AddMemberView.swift */; };
 		86AE6B0E2ADBE7A90092A1FE /* AddMemberGrideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B0D2ADBE7A90092A1FE /* AddMemberGrideView.swift */; };
-
-		86AE6B112AE50FFE0092A1FE /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B102AE50FFE0092A1FE /* FriendListView.swift */; };
-		86AE6B152AE514860092A1FE /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B142AE514860092A1FE /* FriendListCell.swift */; };
-		86AE6B192AE517690092A1FE /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B182AE517690092A1FE /* MyPageView.swift */; };
-		86AE6B1B2AE521B90092A1FE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B1A2AE521B90092A1FE /* CardView.swift */; };
-
-
+		86AE6B1E2AE562E50092A1FE /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B1D2AE562E50092A1FE /* FriendListCell.swift */; };
+		86AE6B202AE563190092A1FE /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B1F2AE563190092A1FE /* FriendListView.swift */; };
+		86AE6B222AE5633F0092A1FE /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B212AE5633F0092A1FE /* MyPageView.swift */; };
+		86AE6B242AE563690092A1FE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B232AE563690092A1FE /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,13 +79,10 @@
 		86AE6B072ADBD65B0092A1FE /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		86AE6B0B2ADBE4A20092A1FE /* AddMemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberView.swift; sourceTree = "<group>"; };
 		86AE6B0D2ADBE7A90092A1FE /* AddMemberGrideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemberGrideView.swift; sourceTree = "<group>"; };
-
-
-		86AE6B102AE50FFE0092A1FE /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
-		86AE6B142AE514860092A1FE /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
-		86AE6B182AE517690092A1FE /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
-		86AE6B1A2AE521B90092A1FE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-
+		86AE6B1D2AE562E50092A1FE /* FriendListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
+		86AE6B1F2AE563190092A1FE /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
+		86AE6B212AE5633F0092A1FE /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		86AE6B232AE563690092A1FE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,11 +185,8 @@
 		61AF91372AD540F0009563E3 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-
-
-				86AE6B0F2AE50AB80092A1FE /* MyPage */,
+				86AE6B1C2AE562BB0092A1FE /* MyPage */,
 				619FADA42AE4EA6200AB5511 /* Group */,
-
 				86AE6B002ADBD0AF0092A1FE /* AddGroup */,
 				86AE6AFB2ADBCE240092A1FE /* Components */,
 				86AE6AF62ADBCDF00092A1FE /* AddFriend */,
@@ -234,12 +225,7 @@
 				86AE6AFE2ADBCE3F0092A1FE /* SearchBar.swift */,
 				86AE6B032ADBD3F40092A1FE /* CancleButton.swift */,
 				86AE6B072ADBD65B0092A1FE /* CheckBoxButton.swift */,
-
-
-				86AE6B1A2AE521B90092A1FE /* CardView.swift */,
-
-
-
+				86AE6B232AE563690092A1FE /* CardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -254,19 +240,17 @@
 			);
 			path = AddGroup;
 			sourceTree = "<group>";
-
-
-		86AE6B0F2AE50AB80092A1FE /* MyPage */ = {
+		};
+		86AE6B1C2AE562BB0092A1FE /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				86AE6B102AE50FFE0092A1FE /* FriendListView.swift */,
-				86AE6B142AE514860092A1FE /* FriendListCell.swift */,
-				86AE6B182AE517690092A1FE /* MyPageView.swift */,
+				86AE6B1D2AE562E50092A1FE /* FriendListCell.swift */,
+				86AE6B1F2AE563190092A1FE /* FriendListView.swift */,
+				86AE6B212AE5633F0092A1FE /* MyPageView.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
 		};
-
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,19 +322,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				86AE6B022ADBD1130092A1FE /* AddGroupView.swift in Sources */,
-
-
-				86AE6B1B2AE521B90092A1FE /* CardView.swift in Sources */,
-
 				86AE6AFA2ADBCE1E0092A1FE /* AddFriendListCell.swift in Sources */,
 				86AE6B042ADBD3F40092A1FE /* CancleButton.swift in Sources */,
 				61AF90D72AD3D19F009563E3 /* ContentView.swift in Sources */,
 				86AE6B082ADBD65B0092A1FE /* CheckBoxButton.swift in Sources */,
-
-
 				619FADA62AE4EA8700AB5511 /* PromiseListView.swift in Sources */,
-
-
 				86AE6B0E2ADBE7A90092A1FE /* AddMemberGrideView.swift in Sources */,
 				61AF913C2AD62886009563E3 /* MainView.swift in Sources */,
 				61AF91422AD63802009563E3 /* CalendarView.swift in Sources */,
@@ -358,32 +334,26 @@
 				86AE6B062ADBD5C10092A1FE /* AddMemberListCell.swift in Sources */,
 				86AE6AF82ADBCE050092A1FE /* AddFriendView.swift in Sources */,
 				61AF91272AD4775B009563E3 /* MyTabView.swift in Sources */,
-				86AE6B152AE514860092A1FE /* FriendListCell.swift in Sources */,
 				61AF91352AD53E07009563E3 /* Friend.swift in Sources */,
 				86AE6AFD2ADBCE350092A1FE /* BackButton.swift in Sources */,
-
-				86AE6B192AE517690092A1FE /* MyPageView.swift in Sources */,
-				86AE6B112AE50FFE0092A1FE /* FriendListView.swift in Sources */,
-
-
 				61AF912C2AD4778A009563E3 /* PromiseView.swift in Sources */,
 				61AF91402AD6299D009563E3 /* FriendGridView.swift in Sources */,
+				86AE6B222AE5633F0092A1FE /* MyPageView.swift in Sources */,
 				61AF912E2AD477A4009563E3 /* ProfileView.swift in Sources */,
 				86AE6B0C2ADBE4A20092A1FE /* AddMemberView.swift in Sources */,
 				61AF91322AD4783B009563E3 /* ColorExtension.swift in Sources */,
+				86AE6B1E2AE562E50092A1FE /* FriendListCell.swift in Sources */,
 				619FADAE2AE5126200AB5511 /* DetailDayScheduleView.swift in Sources */,
 				619FADB02AE51DD100AB5511 /* AddScheduleView.swift in Sources */,
 				61AF913E2AD628FC009563E3 /* FriendView.swift in Sources */,
 				619FAD2A2ADBD2B500AB5511 /* AlarmView.swift in Sources */,
 				61AF91442AD67C54009563E3 /* View+extensions.swift in Sources */,
 				86AE6AFF2ADBCE3F0092A1FE /* SearchBar.swift in Sources */,
-
-
 				619FADA82AE4F74F00AB5511 /* Schedule.swift in Sources */,
 				619FADAC2AE506D700AB5511 /* Date+extensions.swift in Sources */,
 				619FADAA2AE4F9DA00AB5511 /* String+extensions.swift in Sources */,
-
-
+				86AE6B202AE563190092A1FE /* FriendListView.swift in Sources */,
+				86AE6B242AE563690092A1FE /* CardView.swift in Sources */,
 				61AF90D52AD3D19F009563E3 /* ToMeetToMeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,7 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToMeetToMe/Preview Content\"";
-				DEVELOPMENT_TEAM = WJKNV9KXF2;
+				DEVELOPMENT_TEAM = T2Q8P9627P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -542,7 +512,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToMeetToMe/Preview Content\"";
-				DEVELOPMENT_TEAM = WJKNV9KXF2;
+				DEVELOPMENT_TEAM = T2Q8P9627P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
