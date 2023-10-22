@@ -9,7 +9,6 @@ import SwiftUI
 
 struct BackButton: View {
     var btnColor:Color
-   
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         Button(action: {
@@ -20,6 +19,9 @@ struct BackButton: View {
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(btnColor)
                     .font(Font.system(size: 20).weight(.bold))
+
+                    .foregroundColor(.black)
+//                    .font(Font.system(size: 20))
             }
         }
     }

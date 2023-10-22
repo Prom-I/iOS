@@ -12,4 +12,7 @@ extension Color {
     static let lightMint = Color("lightMint")
     static let lightGray = Color("lightGray")
     static let circleBorderGray = Color("circleBorderGray")
+    static let gray1 = Color("gray1")
+    static let primaryColor = Color("Primary color")
+    static let redColor = Color("red")
 }

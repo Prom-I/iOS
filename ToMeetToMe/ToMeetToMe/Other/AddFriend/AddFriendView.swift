@@ -17,7 +17,7 @@ struct AddFriendView: View {
             VStack{
                 SearchBar(text: $searchText)
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
-                                
+
                 ScrollView(.vertical) {
                     LazyVStack(alignment: .leading, spacing: 15) {
                         ForEach(array.filter { friend in
@@ -42,7 +42,9 @@ struct AddFriendView: View {
                 }
             }
             .navigationBarBackButtonHidden(true)
+
             .navigationBarItems(leading: BackButton(btnColor: .mint))
+
             
         }
         
