@@ -48,10 +48,12 @@ struct AddMemberListCell: View {
 
 //struct AddMemberListCell_Previews: PreviewProvider {
 //    static var previews: some View {
-//        let friend = Friend(profileImageString: "1", nickname: "유진")
-//        let groupMemberList: [Friend] = [] // 초기화할 데이터로 빈 배열을 사용하거나 다른 데이터로 초기화하세요.
+
+//       let friend = Friend(profileImageString: "1", nickname: "유진")
+//       let groupMemberList: [Friend] = [] // 초기화할 데이터로 빈 배열을 사용하거나 다른 데이터로 초기화하세요.
 //
-//        return AddMemberListCell(user: friend, groupMemberList:.constant(groupMemberList))
+//       return AddMemberListCell(user: friend, groupMemberList:.constant(groupMemberList))
+
 //    }
 //}
 

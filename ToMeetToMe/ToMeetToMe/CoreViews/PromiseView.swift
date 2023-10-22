@@ -35,7 +35,9 @@ struct PromiseView: View {
                     .navigationBarItems(trailing: Button(action: {print("click")}, label: {Image("ic_bell")})
                     )
             }
-            GroupListView()
+
+            //GroupListView()
+
         }
     }
 }
