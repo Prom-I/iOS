@@ -30,6 +30,7 @@ struct GroupListView: View {
                             .tint(Color.redColor)
                         }
                     }
+                    .listRowInsets(EdgeInsets())
                     .onTapGesture {
                         // GroupCard를 탭하면 원하는 동작 수행
                         print("tap")
