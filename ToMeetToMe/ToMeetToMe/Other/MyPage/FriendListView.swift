@@ -20,21 +20,35 @@ struct FriendListView: View {
             VStack{
                 SearchBar(text: $searchText)
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
-
+                
                 Header(text:"친구 목록 \(array.count)")
                     .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
                 
-                ScrollView(.vertical) {
-                    LazyVStack(alignment: .leading, spacing: 15) {
-                        ForEach(array.filter { friend in
-                            searchText.isEmpty || friend.nickname.localizedCaseInsensitiveContains(searchText)
-                        }) { friend in
-                            FriendListCell(user: friend)
+                List {
+                    ForEach(array.filter { friend in
+                        searchText.isEmpty || friend.nickname.localizedCaseInsensitiveContains(searchText)
+                    }) { friend in
+                        FriendListCell(user: friend)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: true){
+                                Button(action: {
+                                    // 쓰레기통 버튼 동작 추가
+                                    print("Delete friend tapped for \(index)")
+                                }) {
+                                    Image(systemName: "trash")
+                                        .foregroundColor(Color.white) // 쓰레기통 이미지의 색상 -> 왜 안먹지?
+                                        .font(.title) // 이미지 크기 조절
+                                }
+                                .tint(Color.redColor)
+                            }
+                    }.listRowInsets(EdgeInsets())
+                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                        .onTapGesture {
+                            // GroupCard를 탭하면 원하는 동작 수행
+                            print("tap")
                         }
-                    }
+                    
                 }
-                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-                
+                .listStyle(.plain)
             }
             .frame(width: geometry.size.width, // 화면의 너비만큼 설정
                    height: geometry.size.height)
