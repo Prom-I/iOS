@@ -78,14 +78,6 @@ struct CalendarView: View {
                 Group {
                     if index > -1 && index < daysInMonth {  // index : 0 ~ 해당 달의 일 수 - 1일 때
                         let date = getDate(for: index)
-<<<<<<< Updated upstream:ToMeetToMe/ToMeetToMe/Other/Main/CalendarView.swift
-=======
-//                        print(date.formattedCalendarDayDate)
-                        let schedules: [Schedule] = scheduleArray.filter {
-                            $0.isSameDate(inDate: date)
-                        }
-                        
->>>>>>> Stashed changes:ToMeetToMe/ToMeetToMe/Other/Main/Calendar/CalendarView.swift
                         let day = Calendar.current.component(.day, from: date)  // oo(일)
                         let clicked = clickedCurrentMonthDates == date
                         let isToday = date.formattedCalendarDayDate == today.formattedCalendarDayDate
