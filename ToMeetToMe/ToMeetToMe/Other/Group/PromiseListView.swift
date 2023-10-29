@@ -1,0 +1,86 @@
+//
+//  PromiseListView.swift
+//  ToMeetToMe
+//
+//  Created by 조유진 on 2023/10/22.
+//
+
+import SwiftUI
+
+struct PromiseListView: View {
+    @State private var isAlarmViewActive = false
+    
+    init() {
+        UITableView.appearance().separatorStyle = .none
+    }
+    
+    var body: some View {
+        GeometryReader { geometry in
+            
+            ZStack(alignment: .topLeading) {
+                List {
+                    ForEach(1...3, id: \.self) { index in
+                        NavigationLink {
+                            Text("descriptions[index]")
+                        } label: {
+                            PromiseScheduleView()
+                        }
+                    }
+                }
+                .listStyle(.plain)
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                .frame(height: geometry.size.height)
+                .padding(20)
+                
+                Button(action: {print("클릭")}) {
+                    NavigationLink(destination: Text("")){
+                        RoundedRectangle(cornerRadius: 30)
+                            .fill(Color.mintColor)
+                            .frame(width: 164, height: 50)
+                            .overlay(Text("3초만에 약속 잡기").foregroundColor(Color.white).bold())
+                            .shadow(color: .black.opacity(0.1), radius: 5.5, x: 0, y: 4)
+                    }
+                }
+                .offset(x: geometry.size.width/2-82, y: geometry.size.height-70)
+            }
+            .navigationBarTitle("프로미팀", displayMode: .inline).font(.system(size: 17))
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: BackButton(btnColor: .black), trailing: Button(action: {print("click")}){
+                Image("ic_three_dots")
+            })
+            .frame(width: geometry.size.width, height: geometry.size.height)
+            
+               
+         
+           
+            
+        }
+    }
+}
+
+struct PromiseScheduleView: View {
+    
+    
+    var body: some View {
+        
+        HStack{
+            VStack(alignment: .leading, spacing: 10){
+                Text("2023.08.24 ~ 2023.08.28")
+                    .font(.system(size: 11))
+                    .foregroundColor(.black)
+                Text("2차 회의")
+                    .font(.title3)
+                    .foregroundColor(.black)
+            }
+            Spacer()
+        }
+        .frame(height: 80)
+    }
+    
+}
+
+struct PromiseListView_Previews: PreviewProvider {
+    static var previews: some View {
+        PromiseListView()
+    }
+}

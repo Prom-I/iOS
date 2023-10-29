@@ -39,25 +39,17 @@ struct MessageView: View {
             Circle()
                 .fill(Color.lightGray)
                 .frame(width: 54, height: 54)
-            Spacer(minLength: 10)
+            Spacer()
+                .frame(width: 20)
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(content)
                 Text(time)
                     .font(.system(size: 12))
             }
-            Spacer(minLength: 8)
-            
-       
+            Spacer()
+                
             Button(action: {print("Click")}) {
-//                ZStack{
-//
-//
-//                    Text("확인")
-//                        .font(.system(size: 14)).bold()
-//                        .foregroundColor(Color.white)
-//                }
-//
                 RoundedRectangle(cornerSize: .init(width: 4, height: 4))
                     .frame(width: 70, height: 34)
                     .foregroundColor(Color.mintColor)
