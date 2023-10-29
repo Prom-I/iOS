@@ -11,10 +11,12 @@ struct DetailDayScheduleView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .bottom) {
-                VStack(alignment: .leading, spacing: 40){
+                VStack(alignment: .leading, spacing: 50){
+                 
                     Text("08월 23일 (수)")
                         .font(.title2)
-                    VStack {
+                    
+                    VStack(spacing: 20) {
                         scheduleView()
                         scheduleView()
                         scheduleView()
@@ -29,11 +31,7 @@ struct DetailDayScheduleView: View {
                 
                 Button(action: {print("클릭")}) {
                     NavigationLink(destination: Text("")){
-                        RoundedRectangle(cornerRadius: 30)
-                            .fill(Color.mintColor)
-                            .frame(width: 164, height: 50)
-                            .overlay(Text("일정 추가").foregroundColor(Color.white).bold())
-                            .shadow(color: .black.opacity(0.1), radius: 5.5, x: 0, y: 4)
+                        MainButtonView(buttonTitle: "일정 추가")
                     }
                 }
                 .padding(.bottom, 30)
