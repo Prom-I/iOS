@@ -38,7 +38,7 @@ struct AddScheduleView: View {
                         TextField("일정을 입력해주세요.", text: $name)
                             .padding(.vertical, 8)
                         
-                        Picker("회의", selection: $category) {
+                        Picker("카테고리", selection: $category) {
                             ForEach(categories, id: \.self) {
                                 Text($0)
                             }
@@ -75,15 +75,14 @@ struct AddScheduleView: View {
                             .lineLimit(3, reservesSpace: true)
                     }
                     
-                }.listRowBackground(Color.clear)
-                .onAppear() {
-                    UITableView.appearance().backgroundColor = UIColor.clear
-                    UITableViewCell.appearance().backgroundColor = UIColor.clear
                 }
+                .padding(.horizontal, 10)
+                .listRowBackground(Color.clear)
+                .scrollContentBackground(.hidden)
                 Spacer()
             }
             .cornerRadius(30, corners: [.topLeft, .topRight])
-            .frame(width: geometry.size.width, height: geometry.size.height*0.74)
+            .frame(width: geometry.size.width, height: geometry.size.height*0.7)
             .background(Color.lightGray)
         
             

@@ -25,7 +25,6 @@
 		61AF91322AD4783B009563E3 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91312AD4783B009563E3 /* ColorExtension.swift */; };
 		61AF91352AD53E07009563E3 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91342AD53E07009563E3 /* Friend.swift */; };
 		61AF913C2AD62886009563E3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF913B2AD62886009563E3 /* MainView.swift */; };
-		61AF913E2AD628FC009563E3 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF913D2AD628FC009563E3 /* FriendView.swift */; };
 		61AF91402AD6299D009563E3 /* FriendGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF913F2AD6299D009563E3 /* FriendGridView.swift */; };
 		61AF91422AD63802009563E3 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91412AD63802009563E3 /* CalendarView.swift */; };
 		61AF91442AD67C54009563E3 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91432AD67C54009563E3 /* View+extensions.swift */; };
@@ -70,7 +69,6 @@
 		61AF91312AD4783B009563E3 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		61AF91342AD53E07009563E3 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		61AF913B2AD62886009563E3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		61AF913D2AD628FC009563E3 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
 		61AF913F2AD6299D009563E3 /* FriendGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendGridView.swift; sourceTree = "<group>"; };
 		61AF91412AD63802009563E3 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		61AF91432AD67C54009563E3 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 			children = (
 				619FADAF2AE51DD100AB5511 /* AddScheduleView.swift */,
 				61AF913B2AD62886009563E3 /* MainView.swift */,
-				61AF913D2AD628FC009563E3 /* FriendView.swift */,
 				61AF913F2AD6299D009563E3 /* FriendGridView.swift */,
 				61AF91412AD63802009563E3 /* CalendarView.swift */,
 				619FAD292ADBD2B500AB5511 /* AlarmView.swift */,
@@ -363,7 +360,6 @@
 				86AE6B2A2AE566D40092A1FE /* MainButtonView.swift in Sources */,
 				619FADAE2AE5126200AB5511 /* DetailDayScheduleView.swift in Sources */,
 				619FADB02AE51DD100AB5511 /* AddScheduleView.swift in Sources */,
-				61AF913E2AD628FC009563E3 /* FriendView.swift in Sources */,
 				86AE6B2E2AE567180092A1FE /* SettingProfileView.swift in Sources */,
 				619FAD2A2ADBD2B500AB5511 /* AlarmView.swift in Sources */,
 				61AF91442AD67C54009563E3 /* View+extensions.swift in Sources */,
