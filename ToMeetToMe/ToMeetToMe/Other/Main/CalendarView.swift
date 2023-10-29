@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @State var month: Date
-    @State var clickedCurrentMonthDates: Date?
+    @State var month: Date  // 현재 달
+    @State var clickedCurrentMonthDates: Date?  
+    @State
+    var scheduleArray = Schedule.scheduleArray
+    @State
+    var calendarScheduleArray: [Schedule] = []
+    
+    @State var shouldShowDetailSchedule: Bool = false
     
     init(month: Date = Date(), clickedCurrentMonthDates: Date? = nil) {
         _month = State(initialValue: month)
@@ -23,6 +29,9 @@ struct CalendarView: View {
         }
     }
      
+    // < 2023년 10월 >
+    // 일 월 화 수 목 금 토
+    // 날짜와 요일 표시
     private var headerView: some View {
         VStack {
             YearMonthView
@@ -78,16 +87,25 @@ struct CalendarView: View {
                 Group {
                     if index > -1 && index < daysInMonth {  // index : 0 ~ 해당 달의 일 수 - 1일 때
                         let date = getDate(for: index)
+                        
+                        let schedules: [Schedule] = scheduleArray.filter {
+                            $0.isSameDate(inDate: date)
+                        }
+                        
                         let day = Calendar.current.component(.day, from: date)  // oo(일)
                         let clicked = clickedCurrentMonthDates == date
                         let isToday = date.formattedCalendarDayDate == today.formattedCalendarDayDate
                         
-                        CellView(day: day, clicked: clicked, isToday: isToday)
+                        CellView(day: day, clicked: clicked, isToday: isToday, daySchedules: schedules)
                     }
                     else if let prevMonthDate = Calendar.current.date(byAdding: .day, value: index + lastDayOfMonthBefore, to: previousMonth()) {
+                        let schedules: [Schedule] = scheduleArray.filter {
+                            $0.isSameDate(inDate: prevMonthDate)
+                        }
+                        
                         let day = Calendar.current.component(.day, from: prevMonthDate)
                         
-                        CellView(day: day, isCurrentMonthDay: false)
+                        CellView(day: day, isCurrentMonthDay: false, daySchedules: schedules)
                     }
                 }.padding(0)
                 .onTapGesture {
@@ -101,7 +119,7 @@ struct CalendarView: View {
         }
     }
     
-    private struct CellView: View {
+    struct CellView: View {
         private var day: Int
         private var clicked: Bool
         private var isToday: Bool
@@ -124,20 +142,26 @@ struct CalendarView: View {
                 return Color.white
             }
         }
+        @State
+        var daySchedules: [Schedule]
         
         fileprivate init( // 동일한 소스 파일에서만 접근 가능
             day: Int,
             clicked: Bool = false,
             isToday: Bool = false,
-            isCurrentMonthDay: Bool = true
+            isCurrentMonthDay: Bool = true,
+            daySchedules: [Schedule] = []
         ) {
             self.day = day
             self.clicked = clicked
             self.isToday = isToday
             self.isCurrentMonthDay = isCurrentMonthDay
+            self.daySchedules = daySchedules
         }
         
-        fileprivate var body: some View {
+        
+        
+        internal var body: some View {
             VStack(spacing:4) {
                 Circle()
                     .fill(backgroundColor)
@@ -152,18 +176,16 @@ struct CalendarView: View {
 //                        .zIndex(0)
                         
                     VStack(spacing: 4) {
-                        Rectangle()
-                            .fill(Color.lightMint)
-                            .frame(height:16)
-                            .cornerRadius(2)
-                        Rectangle()
-                            .fill(Color.lightMint)
-                            .frame(height:16)
-                            .cornerRadius(2)
-                        Rectangle()
-                            .fill(Color.lightMint)
-                            .frame(height:16)
-                            .cornerRadius(2)
+                        
+                        ForEach(daySchedules, content: { (schedule: Schedule) in
+                            Rectangle()
+                                .fill(Color.lightMint)
+                                .frame(height:16)
+                                .cornerRadius(2)
+                                .overlay(Text(schedule.name).font(.system(size: 12)))
+                        })
+                        
+                        
                       
                     }.padding(.horizontal, 2)
                 }
@@ -292,20 +314,6 @@ private extension CalendarView {
             return newMonth
         }
         return month
-    }
-}
-
-extension Date {
-    static let calendarDayDateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ko_KR")
-        formatter.dateFormat = "MMMM yyyy dd"
-        return formatter
-    }()
-    
-    // 날짜를 oooo월 oooo년 oo일 형식으로 반환
-    var formattedCalendarDayDate: String {
-        return Date.calendarDayDateFormatter.string(from: self)
     }
 }
 
