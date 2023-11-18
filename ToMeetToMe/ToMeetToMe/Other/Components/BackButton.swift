@@ -19,7 +19,7 @@ struct BackButton: View {
                     .aspectRatio(contentMode: .fit)
 
                     .foregroundColor(btnColor)
-                    .font(Font.system(size: 20).weight(.bold))
+                    .font(Font.system(size: 16))
 
                     .foregroundColor(.black)
 //                    .font(Font.system(size: 20))
