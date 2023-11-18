@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		616FF7602B0898F80011B7DB /* PromiseConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616FF75F2B0898F80011B7DB /* PromiseConfirmationView.swift */; };
+		618718822AFD3E710011480D /* UserAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618718812AFD3E710011480D /* UserAuthModel.swift */; };
+		618718842AFD3FC50011480D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618718832AFD3FC50011480D /* LoginView.swift */; };
+		6187188D2AFDFAED0011480D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6187188C2AFDFAED0011480D /* Utilities.swift */; };
+		618718962AFDFC830011480D /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 618718952AFDFC830011480D /* GoogleSignIn */; };
+		618718982AFDFC830011480D /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 618718972AFDFC830011480D /* GoogleSignInSwift */; };
+		618718B42B00919A0011480D /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618718B32B00919A0011480D /* CalendarViewModel.swift */; };
+		618718BD2B00FA970011480D /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 618718BC2B00FA970011480D /* PopupView */; };
 		619FAD2A2ADBD2B500AB5511 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619FAD292ADBD2B500AB5511 /* AlarmView.swift */; };
 		619FADA62AE4EA8700AB5511 /* PromiseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619FADA52AE4EA8700AB5511 /* PromiseListView.swift */; };
 		619FADA82AE4F74F00AB5511 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619FADA72AE4F74F00AB5511 /* Schedule.swift */; };
@@ -42,6 +50,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		616FF75F2B0898F80011B7DB /* PromiseConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseConfirmationView.swift; sourceTree = "<group>"; };
+		618718792AFD3C2C0011480D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		618718812AFD3E710011480D /* UserAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthModel.swift; sourceTree = "<group>"; };
+		618718832AFD3FC50011480D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6187188C2AFDFAED0011480D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		618718B32B00919A0011480D /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		619FAD292ADBD2B500AB5511 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		619FADA52AE4EA8700AB5511 /* PromiseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseListView.swift; sourceTree = "<group>"; };
 		619FADA72AE4F74F00AB5511 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -82,6 +96,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				618718BD2B00FA970011480D /* PopupView in Frameworks */,
+				618718962AFDFC830011480D /* GoogleSignIn in Frameworks */,
+				618718982AFDFC830011480D /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				619FADA52AE4EA8700AB5511 /* PromiseListView.swift */,
+				616FF75F2B0898F80011B7DB /* PromiseConfirmationView.swift */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -115,6 +133,7 @@
 		61AF90D32AD3D19F009563E3 /* ToMeetToMe */ = {
 			isa = PBXGroup;
 			children = (
+				618718792AFD3C2C0011480D /* Info.plist */,
 				61AF912F2AD4782C009563E3 /* Extensions */,
 				61AF90D42AD3D19F009563E3 /* ToMeetToMeApp.swift */,
 				61AF90D62AD3D19F009563E3 /* ContentView.swift */,
@@ -141,6 +160,7 @@
 				61AF91292AD47776009563E3 /* HomeView.swift */,
 				61AF912B2AD4778A009563E3 /* PromiseView.swift */,
 				61AF912D2AD477A4009563E3 /* ProfileView.swift */,
+				618718832AFD3FC50011480D /* LoginView.swift */,
 			);
 			path = CoreViews;
 			sourceTree = "<group>";
@@ -152,6 +172,7 @@
 				61AF91432AD67C54009563E3 /* View+extensions.swift */,
 				619FADA92AE4F9DA00AB5511 /* String+extensions.swift */,
 				619FADAB2AE506D700AB5511 /* Date+extensions.swift */,
+				6187188C2AFDFAED0011480D /* Utilities.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -161,6 +182,7 @@
 			children = (
 				61AF91342AD53E07009563E3 /* Friend.swift */,
 				619FADA72AE4F74F00AB5511 /* Schedule.swift */,
+				618718812AFD3E710011480D /* UserAuthModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +218,7 @@
 				61AF91412AD63802009563E3 /* CalendarView.swift */,
 				619FAD292ADBD2B500AB5511 /* AlarmView.swift */,
 				619FADAD2AE5126200AB5511 /* DetailDayScheduleView.swift */,
+				618718B32B00919A0011480D /* CalendarViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -247,6 +270,11 @@
 			dependencies = (
 			);
 			name = ToMeetToMe;
+			packageProductDependencies = (
+				618718952AFDFC830011480D /* GoogleSignIn */,
+				618718972AFDFC830011480D /* GoogleSignInSwift */,
+				618718BC2B00FA970011480D /* PopupView */,
+			);
 			productName = ToMeetToMe;
 			productReference = 61AF90D12AD3D19F009563E3 /* ToMeetToMe.app */;
 			productType = "com.apple.product-type.application";
@@ -275,6 +303,10 @@
 				Base,
 			);
 			mainGroup = 61AF90C82AD3D19F009563E3;
+			packageReferences = (
+				618718942AFDFC830011480D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				618718BB2B00FA970011480D /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
 			productRefGroup = 61AF90D22AD3D19F009563E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -301,11 +333,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				618718822AFD3E710011480D /* UserAuthModel.swift in Sources */,
 				86AE6B022ADBD1130092A1FE /* AddGroupView.swift in Sources */,
 				86AE6AFA2ADBCE1E0092A1FE /* AddFriendListCell.swift in Sources */,
 				86AE6B042ADBD3F40092A1FE /* CancleButton.swift in Sources */,
 				61AF90D72AD3D19F009563E3 /* ContentView.swift in Sources */,
 				86AE6B082ADBD65B0092A1FE /* CheckBoxButton.swift in Sources */,
+				618718B42B00919A0011480D /* CalendarViewModel.swift in Sources */,
 				619FADA62AE4EA8700AB5511 /* PromiseListView.swift in Sources */,
 				86AE6B0E2ADBE7A90092A1FE /* AddMemberGrideView.swift in Sources */,
 				61AF913C2AD62886009563E3 /* MainView.swift in Sources */,
@@ -323,7 +357,9 @@
 				61AF91322AD4783B009563E3 /* ColorExtension.swift in Sources */,
 				619FADAE2AE5126200AB5511 /* DetailDayScheduleView.swift in Sources */,
 				619FADB02AE51DD100AB5511 /* AddScheduleView.swift in Sources */,
+				616FF7602B0898F80011B7DB /* PromiseConfirmationView.swift in Sources */,
 				61AF913E2AD628FC009563E3 /* FriendView.swift in Sources */,
+				6187188D2AFDFAED0011480D /* Utilities.swift in Sources */,
 				619FAD2A2ADBD2B500AB5511 /* AlarmView.swift in Sources */,
 				61AF91442AD67C54009563E3 /* View+extensions.swift in Sources */,
 				86AE6AFF2ADBCE3F0092A1FE /* SearchBar.swift in Sources */,
@@ -331,6 +367,7 @@
 				619FADAC2AE506D700AB5511 /* Date+extensions.swift in Sources */,
 				619FADAA2AE4F9DA00AB5511 /* String+extensions.swift in Sources */,
 				61AF90D52AD3D19F009563E3 /* ToMeetToMeApp.swift in Sources */,
+				618718842AFD3FC50011480D /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +499,7 @@
 				DEVELOPMENT_TEAM = T2Q8P9627P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToMeetToMe/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -491,6 +529,7 @@
 				DEVELOPMENT_TEAM = T2Q8P9627P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToMeetToMe/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -531,6 +570,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		618718942AFDFC830011480D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.2;
+			};
+		};
+		618718BB2B00FA970011480D /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		618718952AFDFC830011480D /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 618718942AFDFC830011480D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		618718972AFDFC830011480D /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 618718942AFDFC830011480D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		618718BC2B00FA970011480D /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 618718BB2B00FA970011480D /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 61AF90C92AD3D19F009563E3 /* Project object */;
 }

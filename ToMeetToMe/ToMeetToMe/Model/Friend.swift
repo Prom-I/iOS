@@ -20,7 +20,7 @@ class Friend: ObservableObject, Identifiable {
 extension Friend {
     
     static var frinedArray: [Friend] {
-        (1...10).map { (number: Int) in
+        (1...6).map { (number: Int) in
             Friend(profileImageString: "\(number)", nickname: "친구\(number)")
         }
     }
