@@ -30,15 +30,17 @@ struct GroupListView: View {
                             .tint(Color.redColor)
                         }
                     }
+                    .listRowInsets(EdgeInsets())
                     .onTapGesture {
                         // GroupCard를 탭하면 원하는 동작 수행
                         print("tap")
                     }
                 }
                 .listStyle(.plain)
-                MainButtonView(buttonTitle: "그룹 생성")
-                    .padding(.bottom, 30)
-                
+                NavigationLink(destination:AddGroupView()){
+                    MainButtonView(buttonTitle: "그룹 생성")
+                        .padding(.bottom, 30)
+                }
             }
             .navigationTitle("그룹")
             .navigationBarTitleDisplayMode(.inline)
@@ -53,3 +55,4 @@ struct GroupListView_Previews: PreviewProvider {
         GroupListView()
     }
 }
+

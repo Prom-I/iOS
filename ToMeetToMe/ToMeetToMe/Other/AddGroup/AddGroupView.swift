@@ -76,6 +76,7 @@ struct AddGroupView: View {
         } else {  // 포함되어 있지 않은 상태
             groupMemberList.append(member)
         }
+        groupMemberList.sort()
     }
 }
 

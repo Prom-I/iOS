@@ -10,6 +10,7 @@ import SwiftUI
 struct PromiseView: View {
     var body: some View {
         ZStack{
+
             NavigationView {
                 NavigationLink(destination:AddGroupView()){
                     ZStack {

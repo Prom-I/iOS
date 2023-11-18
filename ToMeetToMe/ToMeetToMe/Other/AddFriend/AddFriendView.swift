@@ -17,18 +17,7 @@ struct AddFriendView: View {
             VStack{
                 SearchBar(text: $searchText)
                     .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
-                
-//                List {
-//                    ForEach(array.filter { friend in
-//                        !(searchText.isEmpty) && friend.nickname.localizedCaseInsensitiveContains(searchText)
-//                    }) { friend in
-//                        AddFriendListCell(user: friend)
-//                    }
-//
-//                } //리스트의 스타일 수정
-//                .listStyle(PlainListStyle())
-                
-                
+
                 ScrollView(.vertical) {
                     LazyVStack(alignment: .leading, spacing: 15) {
                         ForEach(array.filter { friend in
@@ -53,7 +42,8 @@ struct AddFriendView: View {
                 }
             }
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: BackButton())
+            .navigationBarItems(leading: BackButton(btnColor: .mint))
+
             
         }
         

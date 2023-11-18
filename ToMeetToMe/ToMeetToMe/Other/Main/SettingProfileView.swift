@@ -69,7 +69,7 @@ struct SettingProfileView: View {
                 
                 TextField("이자민",text: $Name)
                     .padding(.top, 50)
-                    .padding(.leading, 24)
+                    //.padding(.leading, 24)
                 
                 Rectangle()
                   .foregroundColor(.clear)
@@ -80,7 +80,7 @@ struct SettingProfileView: View {
                     .font(Font.custom("Pretendard", size: 12))
                     .foregroundColor(Color.gray)
                     .frame(maxWidth: .infinity, alignment: .trailing) // 좌측 정렬
-                    .padding(.trailing, 24)
+                    //.padding(.trailing, 24)
                 
                 
                     
@@ -102,3 +102,4 @@ struct SettingProfileView_Previews: PreviewProvider {
         SettingProfileView()
     }
 }
+

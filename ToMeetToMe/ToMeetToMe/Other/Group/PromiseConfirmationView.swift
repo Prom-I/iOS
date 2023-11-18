@@ -4,6 +4,7 @@
 //
 //  Created by 조유진 on 2023/11/18.
 //
+
 import SwiftUI
 
 // 약속 확정 화면
@@ -49,7 +50,6 @@ private struct DateAndTimeView: View {
                             .bold()
                             .foregroundColor(.white)
                     }
-
                     .frame(width: 55, height: 30)
             }
         }
@@ -67,7 +67,6 @@ private struct PlaceView: View {
                 Text("둥이 포차")
                     .font(.system(size: 20))
             }
-
             Spacer()
         }
         .padding(.all, 20)
@@ -95,7 +94,6 @@ private struct ParticipantsView: View {
                 }
             }
             Spacer()
-
         }
         .padding(.all, 20)
         .overlay{
@@ -113,7 +111,7 @@ private struct ParticipantCellView: View {
     init(friend: Friend) {
         self.friend = friend
     }
-
+    
     fileprivate var body: some View {
         VStack(alignment: .center, spacing: 4){
             Image(friend.profileImageString)

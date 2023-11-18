@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BackButton: View {
+    var btnColor:Color
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         Button(action: {
@@ -16,6 +17,10 @@ struct BackButton: View {
             HStack {
                 Image(systemName: "chevron.left")
                     .aspectRatio(contentMode: .fit)
+
+                    .foregroundColor(btnColor)
+                    .font(Font.system(size: 16))
+
                     .foregroundColor(.black)
                     .font(Font.system(size: 16))
             }

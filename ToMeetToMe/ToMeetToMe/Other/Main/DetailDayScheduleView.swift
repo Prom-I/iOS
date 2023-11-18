@@ -20,7 +20,6 @@ struct DetailDayScheduleView: View {
         VStack(alignment: .center) {
             ZStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 50){
-                    
                     Text("08월 23일 (수)")
                         .font(.title2)
                     
@@ -41,11 +40,7 @@ struct DetailDayScheduleView: View {
                     isShowAddScheduleView = true
                 }) {
                     NavigationLink(destination: Text("")){
-                        RoundedRectangle(cornerRadius: 30)
-                            .fill(Color.mintColor)
-                            .frame(width: 164, height: 50)
-                            .overlay(Text("일정 추가").foregroundColor(Color.white).bold())
-                            .shadow(color: .black.opacity(0.1), radius: 5.5, x: 0, y: 4)
+                        MainButtonView(buttonTitle: "일정 추가")
                     }
 //                    NavigationLink(destination: Text("")){
 //                        //                            MainButtonView(buttonTitle: "일정 추가")

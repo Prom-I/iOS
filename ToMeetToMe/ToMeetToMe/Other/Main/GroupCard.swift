@@ -45,3 +45,4 @@ struct GroupCard_Previews: PreviewProvider {
         GroupCard(groupProfileImg: "1", groupTitle: "groupTitle", meberNumber: "5",bgColor: Color.gray)
     }
 }
+

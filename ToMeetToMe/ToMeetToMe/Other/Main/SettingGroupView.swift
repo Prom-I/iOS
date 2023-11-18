@@ -32,7 +32,7 @@ struct SettingGroupView: View {
                 
                 TextField("그룹이름은 무엇으로 할까요?",text: $inputGroupName)
                     .padding(.top, 50)
-                    .padding(.leading, 24)
+                    //.padding(.leading, 24)
                 
                 Rectangle()
                   .foregroundColor(.clear)
@@ -43,7 +43,7 @@ struct SettingGroupView: View {
                     .font(Font.custom("Pretendard", size: 12))
                     .foregroundColor(Color.gray)
                     .frame(maxWidth: .infinity, alignment: .leading) // 좌측 정렬
-                    .padding(.leading, 24)
+                    //.padding(.leading, 24)
                     
                 Spacer()
                 
@@ -63,3 +63,4 @@ struct SettingGroupView_Previews: PreviewProvider {
         SettingGroupView()
     }
 }
+

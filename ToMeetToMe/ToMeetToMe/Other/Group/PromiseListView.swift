@@ -9,20 +9,24 @@ import SwiftUI
 
 struct PromiseListView: View {
     @State private var isAlarmViewActive = false
+    
+    init() {
+        UITableView.appearance().separatorStyle = .none
+    }
+    
     var body: some View {
         GeometryReader { geometry in
             
             ZStack(alignment: .topLeading) {
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVGrid(columns: [GridItem(.flexible())], content: {
-                        ForEach(1...1, id: \.self) { index in
-                            PromiseScheduleView()
-                        }
-                    })
-                    
+                List {
+                    ForEach(1...5, id: \.self) { index in
+                        PromiseScheduleView()
+                    }
                 }
+                .listStyle(.plain)
                 .frame(height: geometry.size.height)
                 .padding(20)
+            
                 
                 Button(action: {print("클릭")}) {
                     NavigationLink(destination: Text("")){
@@ -37,7 +41,7 @@ struct PromiseListView: View {
             }
             .navigationBarTitle("프로미팀", displayMode: .inline).font(.system(size: 17))
             .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: BackButton(), trailing: Button(action: {print("click")}){
+            .navigationBarItems(leading: BackButton(btnColor: .black), trailing: Button(action: {print("click")}){
                 Image("ic_three_dots")
             })
             .frame(width: geometry.size.width, height: geometry.size.height)
@@ -54,7 +58,9 @@ struct PromiseScheduleView: View {
     
     
     var body: some View {
-        GeometryReader { geometry in
+        Button {
+            
+        } label: {
             HStack{
                 VStack(alignment: .leading, spacing: 10){
                     Text("2023.08.24 ~ 2023.08.28")
@@ -76,6 +82,8 @@ struct PromiseScheduleView: View {
             )
             .frame(height: 80)
         }
+        .padding(.vertical, 4)
+        
     }
 }
 
