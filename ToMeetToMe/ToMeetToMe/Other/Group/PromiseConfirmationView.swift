@@ -21,7 +21,7 @@ struct PromiseConfirmationView: View {
             }
             .navigationTitle("그룹")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(leading: BackButton(),trailing: Button{} label: {
+            .navigationBarItems(leading: BackButton(btnColor: .black),trailing: Button{} label: {
                 Image(systemName: "ellipsis")
             }
             )

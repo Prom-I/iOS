@@ -36,9 +36,7 @@ struct ContentView: View {
 //        }
 //        .padding(24)
 //        .frame(width: UIScreen.main.bounds.width)
-        
-        
-        
+//        
         
         NavigationView{
             MyTabView()

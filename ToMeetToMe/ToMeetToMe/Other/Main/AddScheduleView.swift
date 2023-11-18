@@ -18,21 +18,21 @@ struct AddScheduleView: View {
     var body: some View {
         
         VStack {
-            Spacer()
+        
             VStack {
 
                 HStack {
-                    Text("08월 23일 (수)")
+                    Text("11월 18일 (토)")
                         .font(.title2)
                     Spacer()
                     Button(action: {print("클릭")}) {
                         Text("확인")
                             .foregroundColor(.black)
-                            .font(.title3)
+                            .font(.system(size: 18))
                     }
                 }
                 .padding(.horizontal, 30)
-                .padding(.top, 30)
+                .padding(.top, 26)
                 
                 List {
                     Section {
@@ -47,7 +47,7 @@ struct AddScheduleView: View {
                         .pickerStyle(.menu)
                         .background(.white)
                         .cornerRadius(15)
-                        .padding(.vertical, 8)
+                        .padding(.vertical, 4)
                         .accentColor(.gray)
                     }
                     Section{
@@ -58,7 +58,8 @@ struct AddScheduleView: View {
                         )
                         .background(.white)
                         .cornerRadius(15)
-                        .padding(.all, 4)
+                        .padding(.horizontal, 4)
+                        .padding(.vertical, 2)
                         DatePicker(
                             "종료",
                             selection: $startDate,
@@ -67,7 +68,7 @@ struct AddScheduleView: View {
                         .background(.white)
                         .cornerRadius(15)
                         .padding(.horizontal, 4)
-                        .padding(.vertical, 4)
+                        .padding(.vertical, 2)
                     }
                     
                     Section {
@@ -80,10 +81,10 @@ struct AddScheduleView: View {
                 .padding(.horizontal, 10)
                 .listRowBackground(Color.clear)
                 .scrollContentBackground(.hidden)
-                Spacer()
+              
             }
             .cornerRadius(30, corners: [.topLeft, .topRight])
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.64)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.68)
             .background(Color.lightGray)
 
         }

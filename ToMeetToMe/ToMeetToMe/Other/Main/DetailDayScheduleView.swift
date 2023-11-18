@@ -20,7 +20,7 @@ struct DetailDayScheduleView: View {
         VStack(alignment: .center) {
             ZStack(alignment: .bottom) {
                 VStack(alignment: .leading, spacing: 50){
-                    Text("08월 23일 (수)")
+                    Text("11월 18일 (수)")
                         .font(.title2)
                     
                     VStack(spacing: 20) {
@@ -39,12 +39,7 @@ struct DetailDayScheduleView: View {
                     shouldShowDetailSchedule = false
                     isShowAddScheduleView = true
                 }) {
-                    NavigationLink(destination: Text("")){
-                        MainButtonView(buttonTitle: "일정 추가")
-                    }
-//                    NavigationLink(destination: Text("")){
-//                        //                            MainButtonView(buttonTitle: "일정 추가")
-//                    }
+                    MainButtonView(buttonTitle: "일정 추가")
                 }
                 .padding(.bottom, 30)
                 
