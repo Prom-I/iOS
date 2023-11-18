@@ -19,4 +19,7 @@ extension Date {
     var formattedCalendarDayDate: String {
         return Date.calendarDayDateFormatter.string(from: self)
     }
+    
+    // 오늘인지 다른 날짜인지 알 수 있는 프로퍼티
+
 }

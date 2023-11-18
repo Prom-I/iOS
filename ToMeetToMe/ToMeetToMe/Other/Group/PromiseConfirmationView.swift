@@ -21,8 +21,7 @@ struct PromiseConfirmationView: View {
             }
             .navigationTitle("그룹")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(leading: BackButton(btnColor: .black
-                                                   ),trailing: Button{} label: {
+            .navigationBarItems(leading: BackButton(),trailing: Button{} label: {
                 Image(systemName: "ellipsis")
             }
             )
@@ -41,7 +40,7 @@ private struct DateAndTimeView: View {
             }
             Spacer()
             Button {
-                
+
             } label: {
                 RoundedRectangle(cornerRadius: 6)
                     .fill(Color.mintColor)
@@ -51,7 +50,6 @@ private struct DateAndTimeView: View {
                             .bold()
                             .foregroundColor(.white)
                     }
-                    
                     .frame(width: 55, height: 30)
             }
         }
@@ -69,7 +67,6 @@ private struct PlaceView: View {
                 Text("둥이 포차")
                     .font(.system(size: 20))
             }
-            
             Spacer()
         }
         .padding(.all, 20)
@@ -80,7 +77,7 @@ private struct PlaceView: View {
                 }
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
-       
+
     }
 }
 
@@ -97,7 +94,6 @@ private struct ParticipantsView: View {
                 }
             }
             Spacer()
-            
         }
         .padding(.all, 20)
         .overlay{
@@ -111,7 +107,7 @@ private struct ParticipantsView: View {
 
 private struct ParticipantCellView: View {
     @State var friend: Friend
-    
+
     init(friend: Friend) {
         self.friend = friend
     }

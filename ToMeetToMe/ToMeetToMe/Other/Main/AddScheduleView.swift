@@ -9,17 +9,18 @@ import SwiftUI
 
 struct AddScheduleView: View {
     @State var name: String = ""
-    @State var category: String = ""
+    @State var category: String = "회의"
     var categories = ["회의", "스터디", "근로", "강의"]
     @State var startDate = Date()
     @State var endDate = Date()
     @State var memo: String = ""
     
-   
-    
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .leading){
+        
+        VStack {
+            Spacer()
+            VStack {
+
                 HStack {
                     Text("08월 23일 (수)")
                         .font(.title2)
@@ -31,7 +32,7 @@ struct AddScheduleView: View {
                     }
                 }
                 .padding(.horizontal, 30)
-                .padding(.vertical, 0)
+                .padding(.top, 30)
                 
                 List {
                     Section {
@@ -82,12 +83,10 @@ struct AddScheduleView: View {
                 Spacer()
             }
             .cornerRadius(30, corners: [.topLeft, .topRight])
-            .frame(width: geometry.size.width, height: geometry.size.height*0.7)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.64)
             .background(Color.lightGray)
-        
-            
+
         }
-        
     }
 }
 
