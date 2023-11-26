@@ -62,8 +62,14 @@ struct AddGroupView: View {
                         .foregroundColor(.mintColor)
                 }
                 
-                Text("확인")
-                    .fontWeight(.regular)
+                NavigationLink(destination:FriendListView()){
+                    Text("확인")
+                        .fontWeight(.regular)
+                        .foregroundColor(groupMemberList.isEmpty ? Color.gray : Color.black)
+                }
+                .disabled(groupMemberList.isEmpty)
+                
+                
             }.foregroundColor(Color.black))
             
         }.onReceive(pub) { (notification) in
