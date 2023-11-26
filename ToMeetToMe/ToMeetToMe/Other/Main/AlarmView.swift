@@ -50,14 +50,6 @@ struct MessageView: View {
             
        
             Button(action: {print("Click")}) {
-//                ZStack{
-//
-//
-//                    Text("확인")
-//                        .font(.system(size: 14)).bold()
-//                        .foregroundColor(Color.white)
-//                }
-//
                 RoundedRectangle(cornerSize: .init(width: 4, height: 4))
                     .frame(width: 70, height: 34)
                     .foregroundColor(Color.mintColor)

@@ -1,0 +1,75 @@
+//
+//  UserData.swift
+//  ToMeetToMe
+//
+//  Created by 조유진 on 2023/11/10.
+//
+
+import SwiftUI
+import GoogleSignIn
+
+class UserAuthModel: ObservableObject {
+    
+    @Published var givenName: String = ""
+    @Published var profilePicUrl: String = ""
+    @Published var isLoggedIn: Bool = false
+    @Published var errorMessage: String = ""
+    
+    init(){
+        check()
+    }
+    
+    func checkStatus(){
+        if(GIDSignIn.sharedInstance.currentUser != nil){
+            let user = GIDSignIn.sharedInstance.currentUser
+            guard let user = user else { return }
+            let givenName = user.profile?.givenName
+            let profilePicUrl = user.profile!.imageURL(withDimension: 100)!.absoluteString
+            self.givenName = givenName ?? ""
+            self.profilePicUrl = profilePicUrl
+            self.isLoggedIn = true
+            
+        }else{
+            self.isLoggedIn = false
+            self.givenName = "Not Logged In"
+            self.profilePicUrl =  ""
+        }
+    }
+    
+    func check(){
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if let error = error {
+                self.errorMessage = "error: \(error.localizedDescription)"
+            }
+            
+            self.checkStatus()
+        }
+    }
+    
+    func signIn(){
+        
+        guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else {return}
+
+        let signInConfig = GIDConfiguration.init(clientID: "317253442779-7iq9rqdlmkut3i60giveb7bf28kosacr.apps.googleusercontent.com")
+        GIDSignIn.sharedInstance.signIn(
+            with: signInConfig,
+            presenting: presentingViewController,
+            callback: { user, error in
+                if let error = error {
+                    self.errorMessage = "error: \(error.localizedDescription)"
+                }
+                print("idToken - \(user?.authentication.idToken ?? "없음")")
+                print("accessToken - \(user?.authentication.accessToken)")
+                print("clientID - \(user?.authentication.clientID ?? "없음")")
+                self.checkStatus()
+            }
+        )
+    }
+    
+    func signOut(){
+        GIDSignIn.sharedInstance.signOut()
+        self.checkStatus()
+    }
+}
+
+// idToken,
