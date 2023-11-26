@@ -48,6 +48,7 @@
 		86AE6B2A2AE566D40092A1FE /* MainButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B292AE566D40092A1FE /* MainButtonView.swift */; };
 		86AE6B2C2AE567020092A1FE /* SettingGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B2B2AE567020092A1FE /* SettingGroupView.swift */; };
 		86AE6B2E2AE567180092A1FE /* SettingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B2D2AE567180092A1FE /* SettingProfileView.swift */; };
+		86AE6B312B00C3450092A1FE /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 86AE6B302B00C3450092A1FE /* PopupView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86AE6B312B00C3450092A1FE /* PopupView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +284,9 @@
 			dependencies = (
 			);
 			name = ToMeetToMe;
+			packageProductDependencies = (
+				86AE6B302B00C3450092A1FE /* PopupView */,
+			);
 			productName = ToMeetToMe;
 			productReference = 61AF90D12AD3D19F009563E3 /* ToMeetToMe.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +315,9 @@
 				Base,
 			);
 			mainGroup = 61AF90C82AD3D19F009563E3;
+			packageReferences = (
+				86AE6B2F2B00C3450092A1FE /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
 			productRefGroup = 61AF90D22AD3D19F009563E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -575,6 +583,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		86AE6B2F2B00C3450092A1FE /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		86AE6B302B00C3450092A1FE /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86AE6B2F2B00C3450092A1FE /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 61AF90C92AD3D19F009563E3 /* Project object */;
 }

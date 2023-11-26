@@ -56,6 +56,12 @@ struct AddGroupView: View {
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: CancleButton(),trailing: Button(action: {
             }) {
+                if (!groupMemberList.isEmpty) {
+                    Text("\(groupMemberList.count)")
+                        .fontWeight(.regular)
+                        .foregroundColor(.mintColor)
+                }
+                
                 Text("확인")
                     .fontWeight(.regular)
             }.foregroundColor(Color.black))
