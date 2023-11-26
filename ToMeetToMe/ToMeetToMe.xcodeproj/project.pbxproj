@@ -63,6 +63,7 @@
 		86C4FC712B1345B4006878F4 /* MeetingMemeberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FC702B1345B4006878F4 /* MeetingMemeberView.swift */; };
 		86C4FC732B134D65006878F4 /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FC722B134D65006878F4 /* MemberView.swift */; };
 
+		86AE6B312B00C3450092A1FE /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 86AE6B302B00C3450092A1FE /* PopupView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86AE6B312B00C3450092A1FE /* PopupView in Frameworks */,
 				618718BD2B00FA970011480D /* PopupView in Frameworks */,
 				618718962AFDFC830011480D /* GoogleSignIn in Frameworks */,
 				618718982AFDFC830011480D /* GoogleSignInSwift in Frameworks */,
@@ -329,6 +331,7 @@
 			);
 			name = ToMeetToMe;
 			packageProductDependencies = (
+				86AE6B302B00C3450092A1FE /* PopupView */,
 				618718952AFDFC830011480D /* GoogleSignIn */,
 				618718972AFDFC830011480D /* GoogleSignInSwift */,
 				618718BC2B00FA970011480D /* PopupView */,
@@ -362,6 +365,7 @@
 			);
 			mainGroup = 61AF90C82AD3D19F009563E3;
 			packageReferences = (
+				86AE6B2F2B00C3450092A1FE /* XCRemoteSwiftPackageReference "PopupView" */,
 				618718942AFDFC830011480D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				618718BB2B00FA970011480D /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
@@ -644,6 +648,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		86AE6B2F2B00C3450092A1FE /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
 		618718942AFDFC830011480D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -663,6 +670,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		86AE6B302B00C3450092A1FE /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86AE6B2F2B00C3450092A1FE /* XCRemoteSwiftPackageReference "PopupView" */;
 		618718952AFDFC830011480D /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 618718942AFDFC830011480D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
