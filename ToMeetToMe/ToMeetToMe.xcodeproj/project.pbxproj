@@ -55,6 +55,14 @@
 		86AE6B2A2AE566D40092A1FE /* MainButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B292AE566D40092A1FE /* MainButtonView.swift */; };
 		86AE6B2C2AE567020092A1FE /* SettingGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B2B2AE567020092A1FE /* SettingGroupView.swift */; };
 		86AE6B2E2AE567180092A1FE /* SettingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B2D2AE567180092A1FE /* SettingProfileView.swift */; };
+
+		86AE6B312B00C3450092A1FE /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 86AE6B302B00C3450092A1FE /* PopupView */; };
+		86C4FC6B2B131902006878F4 /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FC6A2B131902006878F4 /* TempView.swift */; };
+		86C4FC6D2B13190D006878F4 /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FC6C2B13190D006878F4 /* RecommendView.swift */; };
+		86C4FC6F2B1341C2006878F4 /* MeetingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FC6E2B1341C2006878F4 /* MeetingInfoView.swift */; };
+		86C4FC712B1345B4006878F4 /* MeetingMemeberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FC702B1345B4006878F4 /* MeetingMemeberView.swift */; };
+		86C4FC732B134D65006878F4 /* MemberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C4FC722B134D65006878F4 /* MemberView.swift */; };
+
 		86AE6B312B00C3450092A1FE /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = 86AE6B302B00C3450092A1FE /* PopupView */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +114,11 @@
 		86AE6B292AE566D40092A1FE /* MainButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonView.swift; sourceTree = "<group>"; };
 		86AE6B2B2AE567020092A1FE /* SettingGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGroupView.swift; sourceTree = "<group>"; };
 		86AE6B2D2AE567180092A1FE /* SettingProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileView.swift; sourceTree = "<group>"; };
+		86C4FC6A2B131902006878F4 /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
+		86C4FC6C2B13190D006878F4 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecommendView.swift; path = "../../../../../../../.Trash/ToMeetToMe-iOS/ToMeetToMe/ToMeetToMe/Other/Promise/RecommendView.swift"; sourceTree = "<group>"; };
+		86C4FC6E2B1341C2006878F4 /* MeetingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingInfoView.swift; sourceTree = "<group>"; };
+		86C4FC702B1345B4006878F4 /* MeetingMemeberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingMemeberView.swift; sourceTree = "<group>"; };
+		86C4FC722B134D65006878F4 /* MemberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +230,7 @@
 		61AF91372AD540F0009563E3 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				86C4FC692B1318F5006878F4 /* Promise */,
 				86AE6B1C2AE562BB0092A1FE /* MyPage */,
 				619FADA42AE4EA6200AB5511 /* Group */,
 				86AE6B002ADBD0AF0092A1FE /* AddGroup */,
@@ -286,6 +300,18 @@
 				86AE6B212AE5633F0092A1FE /* MyPageView.swift */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		86C4FC692B1318F5006878F4 /* Promise */ = {
+			isa = PBXGroup;
+			children = (
+				86C4FC6A2B131902006878F4 /* TempView.swift */,
+				86C4FC6C2B13190D006878F4 /* RecommendView.swift */,
+				86C4FC6E2B1341C2006878F4 /* MeetingInfoView.swift */,
+				86C4FC702B1345B4006878F4 /* MeetingMemeberView.swift */,
+				86C4FC722B134D65006878F4 /* MemberView.swift */,
+			);
+			path = Promise;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,10 +398,12 @@
 				618718822AFD3E710011480D /* UserAuthModel.swift in Sources */,
 				86AE6B022ADBD1130092A1FE /* AddGroupView.swift in Sources */,
 				86AE6AFA2ADBCE1E0092A1FE /* AddFriendListCell.swift in Sources */,
+				86C4FC6B2B131902006878F4 /* TempView.swift in Sources */,
 				86AE6B042ADBD3F40092A1FE /* CancleButton.swift in Sources */,
 				61AF90D72AD3D19F009563E3 /* ContentView.swift in Sources */,
 				86AE6B082ADBD65B0092A1FE /* CheckBoxButton.swift in Sources */,
 				618718B42B00919A0011480D /* CalendarViewModel.swift in Sources */,
+				86C4FC6F2B1341C2006878F4 /* MeetingInfoView.swift in Sources */,
 				619FADA62AE4EA8700AB5511 /* PromiseListView.swift in Sources */,
 				86AE6B0E2ADBE7A90092A1FE /* AddMemberGrideView.swift in Sources */,
 				61AF913C2AD62886009563E3 /* MainView.swift in Sources */,
@@ -384,6 +412,8 @@
 				86AE6B282AE566BD0092A1FE /* GropuListView.swift in Sources */,
 				86AE6B062ADBD5C10092A1FE /* AddMemberListCell.swift in Sources */,
 				86AE6AF82ADBCE050092A1FE /* AddFriendView.swift in Sources */,
+				86C4FC6D2B13190D006878F4 /* RecommendView.swift in Sources */,
+				86C4FC712B1345B4006878F4 /* MeetingMemeberView.swift in Sources */,
 				61AF91272AD4775B009563E3 /* MyTabView.swift in Sources */,
 				61AF91352AD53E07009563E3 /* Friend.swift in Sources */,
 				86AE6AFD2ADBCE350092A1FE /* BackButton.swift in Sources */,
@@ -393,6 +423,7 @@
 				86AE6B222AE5633F0092A1FE /* MyPageView.swift in Sources */,
 				61AF912E2AD477A4009563E3 /* ProfileView.swift in Sources */,
 				86AE6B0C2ADBE4A20092A1FE /* AddMemberView.swift in Sources */,
+				86C4FC732B134D65006878F4 /* MemberView.swift in Sources */,
 				61AF91322AD4783B009563E3 /* ColorExtension.swift in Sources */,
 				86AE6B1E2AE562E50092A1FE /* FriendListCell.swift in Sources */,
 				86AE6B2A2AE566D40092A1FE /* MainButtonView.swift in Sources */,

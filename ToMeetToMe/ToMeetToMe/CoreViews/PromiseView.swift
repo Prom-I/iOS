@@ -13,26 +13,26 @@ struct PromiseView: View {
             
         NavigationView {
             ZStack{
-//                VStack() {
-//                    Spacer()
-//                    Text("아직 그룹이 없어요ㅠㅠ\n친구들과 그룹을 만들어보세요!\n ex) 건축학개론 팀플, 동창회")
-//                        .multilineTextAlignment(.center)
-//                        .foregroundColor(.gray)
-//                    Spacer()
-//                }
-//
-//                VStack {
-//                    Spacer()
-//                    NavigationLink(destination:AddGroupView()){
-//                        ZStack {
-//                            MainButtonView(buttonTitle: "그룹 생성하기")
-//                        }
-//                        .padding(.bottom, 50)
-//                    }
-//
-//
-//                }
-                PromiseConfirmationView()
+                VStack() {
+                    Spacer()
+                    Text("아직 그룹이 없어요ㅠㅠ\n친구들과 그룹을 만들어보세요!\n ex) 건축학개론 팀플, 동창회")
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.gray)
+                    Spacer()
+                }
+
+                VStack {
+                    Spacer()
+                    NavigationLink(destination:AddGroupView()){
+                        ZStack {
+                            MainButtonView(buttonTitle: "그룹 생성하기")
+                        }
+                        .padding(.bottom, 50)
+                    }
+
+
+                }
+                //PromiseConfirmationView()
 //                .tint(Color.lightGray)
 //                    .padding(.top, 4)
 //                    .navigationBarTitleDisplayMode(.inline)

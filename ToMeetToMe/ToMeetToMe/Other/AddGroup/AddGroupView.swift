@@ -56,20 +56,20 @@ struct AddGroupView: View {
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: CancleButton(),trailing: Button(action: {
             }) {
+
                 if (!groupMemberList.isEmpty) {
                     Text("\(groupMemberList.count)")
                         .fontWeight(.regular)
                         .foregroundColor(.mintColor)
                 }
-                
-                NavigationLink(destination:FriendListView()){
+
+                NavigationLink(destination:TempView(members: groupMemberList, groupName: "프로미 팀")){
                     Text("확인")
                         .fontWeight(.regular)
                         .foregroundColor(groupMemberList.isEmpty ? Color.gray : Color.black)
                 }
                 .disabled(groupMemberList.isEmpty)
-                
-                
+
             }.foregroundColor(Color.black))
             
         }.onReceive(pub) { (notification) in
