@@ -13,7 +13,6 @@ struct AddMemberListCell: View {
     @State var isChecked: Bool = false
     let pub = NotificationCenter.default.publisher(for: NSNotification.Name("btnStateChange"))
     
-    // 생성자를 수정하여 @Binding 프로퍼티를 초기화합니다.
     init(user: Friend) {
         self.user = user
     }
@@ -21,7 +20,6 @@ struct AddMemberListCell: View {
     var body : some View {
  
         HStack {
-
             Image(self.user.profileImageString)
                 .resizable()
                 .frame(width: 52, height: 52)
