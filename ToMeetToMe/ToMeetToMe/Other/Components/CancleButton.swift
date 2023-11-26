@@ -12,6 +12,7 @@ struct CancleButton: View {
     var body: some View {
         Button(action: {
             self.presentationMode.wrappedValue.dismiss()
+
         }) {
             HStack {
                 Image(systemName: "xmark")
