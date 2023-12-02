@@ -48,6 +48,8 @@
 		86AE6B2A2AE566D40092A1FE /* MainButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B292AE566D40092A1FE /* MainButtonView.swift */; };
 		86AE6B2C2AE567020092A1FE /* SettingGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B2B2AE567020092A1FE /* SettingGroupView.swift */; };
 		86AE6B2E2AE567180092A1FE /* SettingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE6B2D2AE567180092A1FE /* SettingProfileView.swift */; };
+		ED405D692B14A519006CF4C6 /* PickDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED405D682B14A519006CF4C6 /* PickDateView.swift */; };
+		ED405D6B2B14A53E006CF4C6 /* SetPromiseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED405D6A2B14A53E006CF4C6 /* SetPromiseInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,8 @@
 		86AE6B292AE566D40092A1FE /* MainButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonView.swift; sourceTree = "<group>"; };
 		86AE6B2B2AE567020092A1FE /* SettingGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGroupView.swift; sourceTree = "<group>"; };
 		86AE6B2D2AE567180092A1FE /* SettingProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProfileView.swift; sourceTree = "<group>"; };
+		ED405D682B14A519006CF4C6 /* PickDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDateView.swift; sourceTree = "<group>"; };
+		ED405D6A2B14A53E006CF4C6 /* SetPromiseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPromiseInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				619FADA52AE4EA8700AB5511 /* PromiseListView.swift */,
+				ED405D682B14A519006CF4C6 /* PickDateView.swift */,
+				ED405D6A2B14A53E006CF4C6 /* SetPromiseInfoView.swift */,
 			);
 			path = Group;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 				86AE6B282AE566BD0092A1FE /* GropuListView.swift in Sources */,
 				86AE6B062ADBD5C10092A1FE /* AddMemberListCell.swift in Sources */,
 				86AE6AF82ADBCE050092A1FE /* AddFriendView.swift in Sources */,
+				ED405D6B2B14A53E006CF4C6 /* SetPromiseInfoView.swift in Sources */,
 				61AF91272AD4775B009563E3 /* MyTabView.swift in Sources */,
 				61AF91352AD53E07009563E3 /* Friend.swift in Sources */,
 				86AE6AFD2ADBCE350092A1FE /* BackButton.swift in Sources */,
@@ -357,6 +364,7 @@
 				86AE6B262AE566A40092A1FE /* GroupCard.swift in Sources */,
 				86AE6B222AE5633F0092A1FE /* MyPageView.swift in Sources */,
 				61AF912E2AD477A4009563E3 /* ProfileView.swift in Sources */,
+				ED405D692B14A519006CF4C6 /* PickDateView.swift in Sources */,
 				86AE6B0C2ADBE4A20092A1FE /* AddMemberView.swift in Sources */,
 				61AF91322AD4783B009563E3 /* ColorExtension.swift in Sources */,
 				86AE6B1E2AE562E50092A1FE /* FriendListCell.swift in Sources */,
