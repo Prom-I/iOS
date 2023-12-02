@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class Friend: ObservableObject, Identifiable {
+class Friend: ObservableObject, Identifiable, Comparable {
     let id = UUID()
     @Published var profileImageString: String
     @Published var nickname: String
@@ -15,12 +15,19 @@ class Friend: ObservableObject, Identifiable {
         self.profileImageString = profileImageString
         self.nickname = nickname
     }
+    static func < (lhs: Friend, rhs: Friend) -> Bool {
+           return lhs.nickname < rhs.nickname
+    }
+    static func == (lhs: Friend, rhs: Friend) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
 }
 
 extension Friend {
     
     static var frinedArray: [Friend] {
-        (1...10).map { (number: Int) in
+        (1...6).map { (number: Int) in
             Friend(profileImageString: "\(number)", nickname: "친구\(number)")
         }
     }

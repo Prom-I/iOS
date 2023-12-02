@@ -9,36 +9,37 @@ import SwiftUI
 
 struct AddScheduleView: View {
     @State var name: String = ""
-    @State var category: String = ""
+    @State var category: String = "회의"
     var categories = ["회의", "스터디", "근로", "강의"]
     @State var startDate = Date()
     @State var endDate = Date()
     @State var memo: String = ""
     
-   
-    
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .leading){
+        
+        VStack {
+        
+            VStack {
+
                 HStack {
-                    Text("08월 23일 (수)")
+                    Text("11월 18일 (토)")
                         .font(.title2)
                     Spacer()
                     Button(action: {print("클릭")}) {
                         Text("확인")
                             .foregroundColor(.black)
-                            .font(.title3)
+                            .font(.system(size: 18))
                     }
                 }
                 .padding(.horizontal, 30)
-                .padding(.vertical, 0)
+                .padding(.top, 26)
                 
                 List {
                     Section {
                         TextField("일정을 입력해주세요.", text: $name)
                             .padding(.vertical, 8)
                         
-                        Picker("회의", selection: $category) {
+                        Picker("카테고리", selection: $category) {
                             ForEach(categories, id: \.self) {
                                 Text($0)
                             }
@@ -46,7 +47,7 @@ struct AddScheduleView: View {
                         .pickerStyle(.menu)
                         .background(.white)
                         .cornerRadius(15)
-                        .padding(.vertical, 8)
+                        .padding(.vertical, 4)
                         .accentColor(.gray)
                     }
                     Section{
@@ -57,7 +58,8 @@ struct AddScheduleView: View {
                         )
                         .background(.white)
                         .cornerRadius(15)
-                        .padding(.all, 4)
+                        .padding(.horizontal, 4)
+                        .padding(.vertical, 2)
                         DatePicker(
                             "종료",
                             selection: $startDate,
@@ -66,7 +68,7 @@ struct AddScheduleView: View {
                         .background(.white)
                         .cornerRadius(15)
                         .padding(.horizontal, 4)
-                        .padding(.vertical, 4)
+                        .padding(.vertical, 2)
                     }
                     
                     Section {
@@ -75,20 +77,17 @@ struct AddScheduleView: View {
                             .lineLimit(3, reservesSpace: true)
                     }
                     
-                }.listRowBackground(Color.clear)
-                .onAppear() {
-                    UITableView.appearance().backgroundColor = UIColor.clear
-                    UITableViewCell.appearance().backgroundColor = UIColor.clear
                 }
-                Spacer()
+                .padding(.horizontal, 10)
+                .listRowBackground(Color.clear)
+                .scrollContentBackground(.hidden)
+              
             }
             .cornerRadius(30, corners: [.topLeft, .topRight])
-            .frame(width: geometry.size.width, height: geometry.size.height*0.74)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.68)
             .background(Color.lightGray)
-        
-            
+
         }
-        
     }
 }
 

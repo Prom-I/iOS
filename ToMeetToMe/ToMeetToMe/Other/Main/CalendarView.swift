@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct CalendarView: View {
-    @State var month: Date  // 현재 달
+    @State private var month: Date = Date()  // 현재 달
     @State var clickedCurrentMonthDates: Date?  
     @State
     var scheduleArray = Schedule.scheduleArray
@@ -16,6 +17,7 @@ struct CalendarView: View {
     var calendarScheduleArray: [Schedule] = []
     
     @State var shouldShowDetailSchedule: Bool = false
+    @State var isShowAddScheduleView: Bool = false
     
     init(month: Date = Date(), clickedCurrentMonthDates: Date? = nil) {
         _month = State(initialValue: month)
@@ -27,6 +29,19 @@ struct CalendarView: View {
             headerView
             calendarGridView
         }
+        .popup(isPresented: $shouldShowDetailSchedule) {
+            DetailDayScheduleView(shouldShowDetailSchedule:$shouldShowDetailSchedule, isShowAddScheduleView: $isShowAddScheduleView)
+        } customize: {
+            $0
+            .closeOnTapOutside(true)
+        }
+        .popup(isPresented: $isShowAddScheduleView) {
+            AddScheduleView()
+        } customize: {
+            $0
+            .closeOnTapOutside(true)
+        }
+
     }
      
     // < 2023년 10월 >
@@ -82,36 +97,38 @@ struct CalendarView: View {
         let numberOfRows = Int(ceil(Double(daysInMonth + firstWeekday) / 7.0))  // 해당 달이 몇주인지
         let visibleDaysOfNextMonth = numberOfRows * 7 - (daysInMonth + firstWeekday)
         
-        return ScrollView{ LazyVGrid(columns: Array(repeating: GridItem(), count: 7), spacing: 4) {
+        return ScrollView{
+                LazyVGrid(columns: Array(repeating: GridItem(), count: 7), spacing: 4) {
             ForEach(-firstWeekday ..< daysInMonth + visibleDaysOfNextMonth, id: \.self) { index in
                 Group {
                     if index > -1 && index < daysInMonth {  // index : 0 ~ 해당 달의 일 수 - 1일 때
-                        let date = getDate(for: index)
-                        
-                        let schedules: [Schedule] = scheduleArray.filter {
-                            $0.isSameDate(inDate: date)
-                        }
+                        let date: Date = getDate(for: index)
                         
                         let day = Calendar.current.component(.day, from: date)  // oo(일)
                         let clicked = clickedCurrentMonthDates == date
                         let isToday = date.formattedCalendarDayDate == today.formattedCalendarDayDate
                         
-                        CellView(day: day, clicked: clicked, isToday: isToday, daySchedules: schedules)
+//                        calendarScheduleArray = scheduleArray.filter {
+//                            $0.isSameDate(inDate: date)
+//                        }
+                        
+                        CellView(day: day, clicked: clicked, isToday: isToday, daySchedules: calendarScheduleArray)
                     }
                     else if let prevMonthDate = Calendar.current.date(byAdding: .day, value: index + lastDayOfMonthBefore, to: previousMonth()) {
-                        let schedules: [Schedule] = scheduleArray.filter {
-                            $0.isSameDate(inDate: prevMonthDate)
-                        }
+//                        calendarScheduleArray = scheduleArray.filter {
+//                            $0.isSameDate(inDate: prevMonthDate)
+//                        }
                         
                         let day = Calendar.current.component(.day, from: prevMonthDate)
                         
-                        CellView(day: day, isCurrentMonthDay: false, daySchedules: schedules)
+                        CellView(day: day, isCurrentMonthDay: false, daySchedules: calendarScheduleArray)
                     }
                 }.padding(0)
                 .onTapGesture {
                     if 0 <= index && index < daysInMonth {
-                        let date = getDate(for: index)
+                        let date: Date = getDate(for: index)
                         clickedCurrentMonthDates = date
+                        shouldShowDetailSchedule = true
                     }
                 }
             }

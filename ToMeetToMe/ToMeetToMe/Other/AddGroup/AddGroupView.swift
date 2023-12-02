@@ -56,8 +56,20 @@ struct AddGroupView: View {
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: CancleButton(),trailing: Button(action: {
             }) {
-                Text("확인")
-                    .fontWeight(.regular)
+
+                if (!groupMemberList.isEmpty) {
+                    Text("\(groupMemberList.count)")
+                        .fontWeight(.regular)
+                        .foregroundColor(.mintColor)
+                }
+
+                NavigationLink(destination:TempView(members: groupMemberList, groupName: "프로미 팀")){
+                    Text("확인")
+                        .fontWeight(.regular)
+                        .foregroundColor(groupMemberList.isEmpty ? Color.gray : Color.black)
+                }
+                .disabled(groupMemberList.isEmpty)
+
             }.foregroundColor(Color.black))
             
         }.onReceive(pub) { (notification) in
@@ -76,6 +88,7 @@ struct AddGroupView: View {
         } else {  // 포함되어 있지 않은 상태
             groupMemberList.append(member)
         }
+        groupMemberList.sort()
     }
 }
 
