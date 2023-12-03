@@ -240,13 +240,12 @@
 		61AF91382AD62868009563E3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				61EB2B662B1B7B5700603A25 /* Calendar */,
 				619FADAF2AE51DD100AB5511 /* AddScheduleView.swift */,
 				61AF913B2AD62886009563E3 /* MainView.swift */,
 				61AF913F2AD6299D009563E3 /* FriendGridView.swift */,
-				61AF91412AD63802009563E3 /* CalendarView.swift */,
 				619FAD292ADBD2B500AB5511 /* AlarmView.swift */,
 				619FADAD2AE5126200AB5511 /* DetailDayScheduleView.swift */,
-				618718B32B00919A0011480D /* CalendarViewModel.swift */,
 				86AE6B252AE566A40092A1FE /* GroupCard.swift */,
 				86AE6B272AE566BD0092A1FE /* GropuListView.swift */,
 				86AE6B292AE566D40092A1FE /* MainButtonView.swift */,
@@ -254,6 +253,15 @@
 				86AE6B2D2AE567180092A1FE /* SettingProfileView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		61EB2B662B1B7B5700603A25 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				618718B32B00919A0011480D /* CalendarViewModel.swift */,
+				61AF91412AD63802009563E3 /* CalendarView.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		86AE6AF62ADBCDF00092A1FE /* AddFriend */ = {

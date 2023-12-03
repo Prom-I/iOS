@@ -40,6 +40,7 @@ struct ContentView: View {
         
         NavigationView{
             MyTabView()
+                .environmentObject(CalendarViewModel())
         }
     }
     

@@ -11,10 +11,7 @@ import PopupView
 struct CalendarView: View {
     @State private var month: Date = Date()  // 현재 달
     @State var clickedCurrentMonthDates: Date?  
-    @State
-    var scheduleArray = Schedule.scheduleArray
-    @State
-    var calendarScheduleArray: [Schedule] = []
+    @EnvironmentObject var calendarViewModel: CalendarViewModel
     
     @State var shouldShowDetailSchedule: Bool = false
     @State var isShowAddScheduleView: Bool = false
@@ -108,20 +105,13 @@ struct CalendarView: View {
                         let clicked = clickedCurrentMonthDates == date
                         let isToday = date.formattedCalendarDayDate == today.formattedCalendarDayDate
                         
-//                        calendarScheduleArray = scheduleArray.filter {
-//                            $0.isSameDate(inDate: date)
-//                        }
-                        
-                        CellView(day: day, clicked: clicked, isToday: isToday, daySchedules: calendarScheduleArray)
+                        CellView(day: day, date: date, clicked: clicked, isToday: isToday)
                     }
                     else if let prevMonthDate = Calendar.current.date(byAdding: .day, value: index + lastDayOfMonthBefore, to: previousMonth()) {
-//                        calendarScheduleArray = scheduleArray.filter {
-//                            $0.isSameDate(inDate: prevMonthDate)
-//                        }
                         
                         let day = Calendar.current.component(.day, from: prevMonthDate)
                         
-                        CellView(day: day, isCurrentMonthDay: false, daySchedules: calendarScheduleArray)
+                        CellView(day: day, date: prevMonthDate, isCurrentMonthDay: false)
                     }
                 }.padding(0)
                 .onTapGesture {
@@ -137,7 +127,9 @@ struct CalendarView: View {
     }
     
     struct CellView: View {
+        @EnvironmentObject var calendarViewModel: CalendarViewModel
         private var day: Int
+        private var date: Date
         private var clicked: Bool
         private var isToday: Bool
         private var isCurrentMonthDay: Bool
@@ -160,16 +152,17 @@ struct CalendarView: View {
             }
         }
         @State
-        var daySchedules: [Schedule]
+        var daySchedules: [Schedule] = []
         
         fileprivate init( // 동일한 소스 파일에서만 접근 가능
             day: Int,
+            date: Date,
             clicked: Bool = false,
             isToday: Bool = false,
-            isCurrentMonthDay: Bool = true,
-            daySchedules: [Schedule] = []
+            isCurrentMonthDay: Bool = true
         ) {
             self.day = day
+            self.date = date
             self.clicked = clicked
             self.isToday = isToday
             self.isCurrentMonthDay = isCurrentMonthDay
@@ -188,34 +181,29 @@ struct CalendarView: View {
                     .padding(.vertical, 2)
                 
                 ZStack(alignment: .top) {
-//                    RoundedRectangle(cornerSize: .init(width: 6, height: 6))  // 계획 들어갈 공간 대체
-//                        .fill(Color.white)
-//                        .zIndex(0)
                         
                     VStack(spacing: 4) {
                         
-                        ForEach(daySchedules, content: { (schedule: Schedule) in
+                        ForEach(daySchedules, id: \.self) { schedule in
                             Rectangle()
                                 .fill(Color.lightMint)
                                 .frame(height:16)
                                 .cornerRadius(2)
                                 .overlay(Text(schedule.name).font(.system(size: 12)))
-                        })
-                        
-                        
+                            
+                        }
                       
                     }.padding(.horizontal, 2)
                 }
-                
                 Spacer()
-                
             }
             .frame(width: 58,height: 120)
             .background(clicked ? Color.gray1 : Color.clear)
-       
-            
-            
-
+            .onAppear {
+                self.daySchedules = calendarViewModel.schedules.filter {
+                    $0.isSameDate(as: date)
+                }
+            }
         }
     }
 }
@@ -337,5 +325,6 @@ private extension CalendarView {
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
         CalendarView()
+            .environmentObject(CalendarViewModel())
     }
 }
