@@ -83,9 +83,9 @@ struct AddScheduleView: View {
                 .scrollContentBackground(.hidden)
               
             }
-            .cornerRadius(30, corners: [.topLeft, .topRight])
             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.68)
             .background(Color.lightGray)
+            .cornerRadius(30, corners: [.topLeft, .topRight])
 
         }
     }

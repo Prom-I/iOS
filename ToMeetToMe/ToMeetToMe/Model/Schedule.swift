@@ -7,38 +7,44 @@
 
 import SwiftUI
 
-class Schedule: Identifiable{
-    let uid = UUID()
+struct Schedule: Hashable{
     var name: String = ""
-    var startAt: Date
-    var endAt: Date
+    var startAt: String
+    var endAt: String
+    var startAtToDate: Date {
+        let dateFormatter = ISO8601DateFormatter()
+        dateFormatter.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
+        return dateFormatter.date(from: startAt)!
+    }
+    var endAtToDate: Date? {
+        let dateFormatter = ISO8601DateFormatter()
+        dateFormatter.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
+        return dateFormatter.date(from: endAt)
+    }
     var allDay: Bool
     var memo: String = ""
     var notification: Bool
+    var repeatString : String
     var complete: Bool
     
-    init(name: String, startAt: String, endAt: String, allDay: Bool, memo: String, notification: Bool, complete: Bool) {
+    init(name: String, startAt: String, endAt: String, allDay: Bool, memo: String, notification: Bool, repeatString: String, complete: Bool) {
         self.name = name
-        self.startAt = startAt.toDate() ?? Date()
-        self.endAt = endAt.toDate() ?? Date()
+        self.startAt = startAt
+        self.endAt = endAt
         self.allDay = allDay
         self.memo = memo
         self.notification = notification
+        self.repeatString = repeatString
         self.complete = complete
+    }
+    
+    func isSameDate(as date: Date) -> Bool {
+        let calendar = Calendar.current
+        print(calendar.isDate(startAtToDate, inSameDayAs: date))
+        return calendar.isDate(startAtToDate, inSameDayAs: date)
     }
 }
 
-extension Schedule {
-    
-    static var scheduleArray: [Schedule] {
-        [
-            Schedule(name: "ㅠㅠㅠ", startAt: "2023-11-18 04:11:00", endAt: "2023-11-18 04:11:00", allDay: true, memo: "오늘 저녁은 고기!", notification: true, complete: false),
-            Schedule(name: "hi", startAt: "2023-11-24 04:11:00", endAt: "2023-11-24 04:11:00", allDay: true, memo: "오늘은 뭐먹지?", notification: true, complete: false),
-            Schedule(name: "뭐함", startAt: "2023-11-12 04:11:00", endAt: "2023-11-12 04:11:00", allDay: true, memo: "오늘 저녁은 고기!", notification: true, complete: false),
-            Schedule(name: "어렵다", startAt: "2023-11-14 04:11:00", endAt: "2023-11-14 04:11:00", allDay: true, memo: "오늘 저녁은 고기!", notification: true, complete: false)
-        ]
-    }
-}
 
 
 // {
