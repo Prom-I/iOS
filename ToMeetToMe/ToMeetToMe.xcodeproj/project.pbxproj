@@ -33,6 +33,14 @@
 		61AF91352AD53E07009563E3 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91342AD53E07009563E3 /* Friend.swift */; };
 		61AF91402AD6299D009563E3 /* FriendGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF913F2AD6299D009563E3 /* FriendGridView.swift */; };
 		61AF91442AD67C54009563E3 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF91432AD67C54009563E3 /* View+extensions.swift */; };
+		61B60BDD2B430B5B00341802 /* ToMeetToMeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B60BDC2B430B5B00341802 /* ToMeetToMeAPI.swift */; };
+		61B60BE02B430BFD00341802 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 61B60BDF2B430BFD00341802 /* CombineMoya */; };
+		61B60BE22B430BFD00341802 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 61B60BE12B430BFD00341802 /* Moya */; };
+		61B60BE42B430BFD00341802 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 61B60BE32B430BFD00341802 /* ReactiveMoya */; };
+		61B60BE62B430BFD00341802 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 61B60BE52B430BFD00341802 /* RxMoya */; };
+		61B60BE92B430CAF00341802 /* SignInDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B60BE82B430CAF00341802 /* SignInDto.swift */; };
+		61B60BEB2B430D3800341802 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B60BEA2B430D3800341802 /* NetworkService.swift */; };
+		61B60BED2B430E0500341802 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B60BEC2B430E0500341802 /* BaseResponse.swift */; };
 		61DF8BE12B1CBC83008AEBF5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DF8BE02B1CBC83008AEBF5 /* CalendarView.swift */; };
 		61DF8BE32B1CBC8D008AEBF5 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DF8BE22B1CBC8D008AEBF5 /* CalendarViewModel.swift */; };
 		61DF8C182B1DDD8B008AEBF5 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61DF8C172B1DDD8B008AEBF5 /* Colors.xcassets */; };
@@ -86,6 +94,10 @@
 		61AF91342AD53E07009563E3 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		61AF913F2AD6299D009563E3 /* FriendGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendGridView.swift; sourceTree = "<group>"; };
 		61AF91432AD67C54009563E3 /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
+		61B60BDC2B430B5B00341802 /* ToMeetToMeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToMeetToMeAPI.swift; sourceTree = "<group>"; };
+		61B60BE82B430CAF00341802 /* SignInDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDto.swift; sourceTree = "<group>"; };
+		61B60BEA2B430D3800341802 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		61B60BEC2B430E0500341802 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		61D8927A2B1DF9A7003C1D00 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61DF8BE02B1CBC83008AEBF5 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		61DF8BE22B1CBC8D008AEBF5 /* CalendarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
@@ -122,7 +134,11 @@
 			files = (
 				61AE4A6C2B1DFC720009A1D0 /* PopupView in Frameworks */,
 				618718962AFDFC830011480D /* GoogleSignIn in Frameworks */,
+				61B60BE02B430BFD00341802 /* CombineMoya in Frameworks */,
+				61B60BE22B430BFD00341802 /* Moya in Frameworks */,
+				61B60BE62B430BFD00341802 /* RxMoya in Frameworks */,
 				618718982AFDFC830011480D /* GoogleSignInSwift in Frameworks */,
+				61B60BE42B430BFD00341802 /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,11 +195,21 @@
 		61AF91332AD53DDF009563E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				61B60BE72B430CA300341802 /* DTO */,
 				61AF91342AD53E07009563E3 /* Friend.swift */,
 				619FADA72AE4F74F00AB5511 /* Schedule.swift */,
 				618718812AFD3E710011480D /* UserAuthModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		61B60BE72B430CA300341802 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				61B60BE82B430CAF00341802 /* SignInDto.swift */,
+				61B60BEC2B430E0500341802 /* BaseResponse.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		61DF8C102B1DDC4F008AEBF5 /* Sources */ = {
@@ -220,6 +246,8 @@
 		61DF8C142B1DDCE5008AEBF5 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				61B60BEA2B430D3800341802 /* NetworkService.swift */,
+				61B60BDC2B430B5B00341802 /* ToMeetToMeAPI.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -430,6 +458,10 @@
 				618718952AFDFC830011480D /* GoogleSignIn */,
 				618718972AFDFC830011480D /* GoogleSignInSwift */,
 				61AE4A6B2B1DFC720009A1D0 /* PopupView */,
+				61B60BDF2B430BFD00341802 /* CombineMoya */,
+				61B60BE12B430BFD00341802 /* Moya */,
+				61B60BE32B430BFD00341802 /* ReactiveMoya */,
+				61B60BE52B430BFD00341802 /* RxMoya */,
 			);
 			productName = ToMeetToMe;
 			productReference = 61AF90D12AD3D19F009563E3 /* ToMeetToMe.app */;
@@ -462,6 +494,7 @@
 			packageReferences = (
 				618718942AFDFC830011480D /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				61AE4A6A2B1DFC720009A1D0 /* XCRemoteSwiftPackageReference "PopupView" */,
+				61B60BDE2B430BFD00341802 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 61AF90D22AD3D19F009563E3 /* Products */;
 			projectDirPath = "";
@@ -503,6 +536,7 @@
 				86AE6B282AE566BD0092A1FE /* GropuListView.swift in Sources */,
 				61DF8BE32B1CBC8D008AEBF5 /* CalendarViewModel.swift in Sources */,
 				86AE6B062ADBD5C10092A1FE /* AddMemberListCell.swift in Sources */,
+				61B60BEB2B430D3800341802 /* NetworkService.swift in Sources */,
 				86AE6AF82ADBCE050092A1FE /* AddFriendView.swift in Sources */,
 				61AF91272AD4775B009563E3 /* MyTabView.swift in Sources */,
 				61AF91352AD53E07009563E3 /* Friend.swift in Sources */,
@@ -524,6 +558,7 @@
 				86C4FC812B137E93006878F4 /* MeetingInfoView.swift in Sources */,
 				86AE6B2E2AE567180092A1FE /* SettingProfileView.swift in Sources */,
 				619FAD2A2ADBD2B500AB5511 /* AlarmView.swift in Sources */,
+				61B60BED2B430E0500341802 /* BaseResponse.swift in Sources */,
 				61AF91442AD67C54009563E3 /* View+extensions.swift in Sources */,
 				86AE6AFF2ADBCE3F0092A1FE /* SearchBar.swift in Sources */,
 				619FADA82AE4F74F00AB5511 /* Schedule.swift in Sources */,
@@ -531,10 +566,12 @@
 				619FADAA2AE4F9DA00AB5511 /* String+extensions.swift in Sources */,
 				86AE6B202AE563190092A1FE /* FriendListView.swift in Sources */,
 				61DF8BE12B1CBC83008AEBF5 /* CalendarView.swift in Sources */,
+				61B60BE92B430CAF00341802 /* SignInDto.swift in Sources */,
 				86AE6B242AE563690092A1FE /* CardView.swift in Sources */,
 				61AF90D52AD3D19F009563E3 /* ToMeetToMeApp.swift in Sources */,
 				618718842AFD3FC50011480D /* LoginView.swift in Sources */,
 				86C4FC7B2B137E4E006878F4 /* TempView.swift in Sources */,
+				61B60BDD2B430B5B00341802 /* ToMeetToMeAPI.swift in Sources */,
 				86AE6B2C2AE567020092A1FE /* SettingGroupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -756,6 +793,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		61B60BDE2B430BFD00341802 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -773,6 +818,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 61AE4A6A2B1DFC720009A1D0 /* XCRemoteSwiftPackageReference "PopupView" */;
 			productName = PopupView;
+		};
+		61B60BDF2B430BFD00341802 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61B60BDE2B430BFD00341802 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		61B60BE12B430BFD00341802 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61B60BDE2B430BFD00341802 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		61B60BE32B430BFD00341802 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61B60BDE2B430BFD00341802 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		61B60BE52B430BFD00341802 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61B60BDE2B430BFD00341802 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
