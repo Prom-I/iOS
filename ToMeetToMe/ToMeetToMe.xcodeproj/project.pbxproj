@@ -203,13 +203,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		61B60BE72B430CA300341802 /* DTO */ = {
+		61B60BDB2B42FA8700341802 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				61B60BE82B430CAF00341802 /* SignInDto.swift */,
-				61B60BEC2B430E0500341802 /* BaseResponse.swift */,
 			);
-			path = DTO;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		61DF8C102B1DDC4F008AEBF5 /* Sources */ = {
@@ -218,7 +216,7 @@
 				61DF8C112B1DDC66008AEBF5 /* Util */,
 				61DF8C122B1DDC7E008AEBF5 /* Application */,
 				61AF91332AD53DDF009563E3 /* Model */,
-				61DF8C142B1DDCE5008AEBF5 /* Network */,
+				61B60BDB2B42FA8700341802 /* Network */,
 				61DF8C152B1DDD2A008AEBF5 /* View */,
 				61DF8C162B1DDD40008AEBF5 /* Resources */,
 			);
@@ -241,15 +239,6 @@
 				61AF90D62AD3D19F009563E3 /* ContentView.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		61DF8C142B1DDCE5008AEBF5 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				61B60BEA2B430D3800341802 /* NetworkService.swift */,
-				61B60BDC2B430B5B00341802 /* ToMeetToMeAPI.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		61DF8C152B1DDD2A008AEBF5 /* View */ = {

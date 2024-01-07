@@ -10,8 +10,8 @@ import PopupView
 
 
 struct CalendarView: View {
-    @State private var month: Date = Date()  // 현재 달
-    @State var clickedCurrentMonthDates: Date?  
+    @State private var month: Date = Date.now  // 현재 달
+    @State var clickedCurrentMonthDates: Date?
     @EnvironmentObject var calendarViewModel: CalendarViewModel
     
     @State var shouldShowDetailSchedule: Bool = false
@@ -118,6 +118,7 @@ struct CalendarView: View {
                 .onTapGesture {
                     if 0 <= index && index < daysInMonth {
                         let date: Date = getDate(for: index)
+                        print("클릭됨: \(date)")
                         clickedCurrentMonthDates = date
                         shouldShowDetailSchedule = true
                     }
@@ -170,8 +171,6 @@ struct CalendarView: View {
             self.daySchedules = daySchedules
         }
         
-        
-        
         internal var body: some View {
             VStack(spacing:4) {
                 Circle()
@@ -211,7 +210,7 @@ struct CalendarView: View {
 
 private extension CalendarView {
     var today: Date {
-        let now = Date()
+        let now = Date.now
         let components = Calendar.current.dateComponents([.year, .month, .day], from: now)  // 현재 시간을 년도, 월, 일 형식의 날짜로
         return Calendar.current.date(from: components)!
     }
@@ -238,7 +237,7 @@ private extension CalendarView {
                 day: 1
             )
         ) else {
-            return Date()
+            return Date.now
         }
         
         var dateComponents = DateComponents()
@@ -249,7 +248,7 @@ private extension CalendarView {
         dateComponents.second = Int(offset)
         
         // 특정 해당 oooo년 oo월 1일에서 index일 만큼 더한 날짜 구하기
-        let date = calendar.date(byAdding: dateComponents, to: firstDayOfMonth) ?? Date()
+        let date = calendar.date(byAdding: dateComponents, to: firstDayOfMonth) ?? Date.now
     
         return date
     }
@@ -288,7 +287,7 @@ private extension CalendarView {
     
     // 이전 월로 이동 가능한지 확인
     func canMoveToPreviousMonth() -> Bool {
-        let currentDate = Date()
+        let currentDate = Date.now
         let calendar = Calendar.current
         // 현재 달의 -3달
         let targetDate = calendar.date(byAdding: .month, value: -3, to: currentDate) ?? currentDate
@@ -302,7 +301,7 @@ private extension CalendarView {
     
     // 다음 월로 이동 가능한지 확인
     func canMoveToNextMonth() -> Bool {
-        let currentDate = Date()
+        let currentDate = Date.now
         let calendar = Calendar.current
         // 현재 달의 +3달
         let targetDate = calendar.date(byAdding: .month, value: 3, to: currentDate) ?? currentDate
@@ -317,6 +316,7 @@ private extension CalendarView {
     // 변경하려는 월 반환
     func adjustedMonth(by value: Int) -> Date {
         if let newMonth = Calendar.current.date(byAdding: .month, value: value, to: month) {
+            print(newMonth)
             return newMonth
         }
         return month

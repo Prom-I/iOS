@@ -14,11 +14,13 @@ struct Schedule: Hashable{
     var startAtToDate: Date {
         let dateFormatter = ISO8601DateFormatter()
         dateFormatter.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
+        dateFormatter.timeZone = TimeZone.autoupdatingCurrent
         return dateFormatter.date(from: startAt)!
     }
     var endAtToDate: Date? {
         let dateFormatter = ISO8601DateFormatter()
         dateFormatter.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
+        dateFormatter.timeZone = TimeZone.autoupdatingCurrent
         return dateFormatter.date(from: endAt)
     }
     var allDay: Bool
@@ -39,8 +41,26 @@ struct Schedule: Hashable{
     }
     
     func isSameDate(as date: Date) -> Bool {
-        let calendar = Calendar.current
-        return calendar.isDate(startAtToDate, inSameDayAs: date)
+//        let calendar = Calendar.current
+//        if calendar.isDate(startAtToDate, inSameDayAs: date) {
+//            print("같음")
+//            print("\(startAtToDate) == \(date)")
+//            return true
+//        } else {
+//            print("다름")
+//            print("\(startAtToDate) != \(date)")
+//            
+//            return false
+//        }
+        
+        let result = Date.dateCompare(fromDate: date, toDate: startAtToDate)
+        print(result)
+        switch result {
+        case "Same":
+            return true
+        default:
+            return false
+        }
     }
 }
 
