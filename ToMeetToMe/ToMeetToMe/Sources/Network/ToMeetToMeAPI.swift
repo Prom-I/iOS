@@ -9,29 +9,37 @@ import Moya
 import Foundation
 
 enum ToMeetToMeAPI {
-
+    
     /// signIn:
     /// 응답 타입: BaseResponse<SignInResponse>
-    case signIn(dto: SignInDto)
-
-   
+    case signIn(dto: SignInDto),
+         userByNickname(_ nickname: String),
+         retrieveUser(userID: String)
 }
 
 extension ToMeetToMeAPI: TargetType {
-    var baseURL: URL { return URL(string: "http://13.125.18.63:8080")! }
-
+    var baseURL: URL { /*return URL(string: "http://13.125.18.63:8080")!*/ return URL(string: "http://localhost:8080")! }
+    
     var path: String {
         switch self {
         case .signIn:
             return "/api/sign-in"
-        
+        case .userByNickname:
+            return "/user"
+        case .retrieveUser(let userID):
+            return "user/retrieve/\(userID)"
+            
         }
     }
-
+    
     var method: Moya.Method {
         switch self {
         case .signIn:
             return .post
+        case .userByNickname:
+            return .get
+        case .retrieveUser:
+            return .get
         }
     }
     
@@ -39,15 +47,23 @@ extension ToMeetToMeAPI: TargetType {
         switch self {
         case let .signIn(dto):
             return .requestJSONEncodable(dto)
+        case .userByNickname(let nickname):
+            let params: [String: String] = [
+                "nickname": nickname
+            ]
+            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+            
+        case .retrieveUser:
+            return .requestPlain
         }
-
+        
     }
     
     var headers: [String: String]? {
         switch self {
-        case .signIn:
+        case .signIn, .userByNickname:
             return ["Content-Type": "application/json"]
-    
+        
         default:
             return [
                 "Content-Type": "application/json",
@@ -55,7 +71,7 @@ extension ToMeetToMeAPI: TargetType {
             ]
         }
     }
-
+    
     var validationType: ValidationType {
         return .successCodes
     }

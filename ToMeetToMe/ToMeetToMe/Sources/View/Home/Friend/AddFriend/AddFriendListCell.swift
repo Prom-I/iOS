@@ -26,7 +26,7 @@ struct AddFriendListCell: View {
             VStack(alignment:.leading){
                 Text(self.user.nickname)
                     .font(.system(size: 18))
-                Text("#\(123/*self.user.id*/)")
+                Text("#\(123)")
                     .font(.system(size: 14))
             }
             Spacer()

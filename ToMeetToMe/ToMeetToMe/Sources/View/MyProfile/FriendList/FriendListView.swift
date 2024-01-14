@@ -98,33 +98,7 @@ struct FriendListView: View {
                                                         .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                                                         
                                                 }
-                        
-//                        ForEach(array.filter { friend in
-//                                                searchText.isEmpty || friend.nickname.localizedCaseInsensitiveContains(searchText)
-//                                            }) { friend in
-//                                                FriendListCell(user: friend)
-//                                                    .swipeActions(edge: .trailing, allowsFullSwipe: true){
-//                                                        Button(action: {
-//                                                            // 쓰레기통 버튼 동작 추가
-//                                                            print("Delete friend tapped for \(index)")
-//                                                            showingPopup = true
-//                                                            deleteTargetIdx = index
-//
-//
-//                                                        }) {
-//                                                            Image(systemName: "trash")
-//                                                                .foregroundColor(Color.white) // 쓰레기통 이미지의 색상 -> 왜 안먹지?
-//                                                                .font(.title) // 이미지 크기 조절
-//                                                        }
-//                                                        .tint(Color.redColor)
-//                                                    }
-//                                            }.listRowInsets(EdgeInsets())
-//                                                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
-//                                                .onTapGesture {
-//                                                    // GroupCard를 탭하면 원하는 동작 수행
-//                                                    print("tap")
-//                                                }
-//
+                    
                     }
                     .listStyle(.plain)
                 }
@@ -155,6 +129,24 @@ struct FriendListView: View {
     }
     
 }
+
+struct Header: View {
+    
+    var headerText:String
+    init(text: String) {
+        self.headerText = text
+    }
+    
+    var body: some View {
+        Text(headerText)
+        .font(.system(size: 16))
+        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+        .frame(height: 10)
+        .padding(.leading, 10)
+        .background(Color.white)
+    }
+}
+
 
 struct FriendListView_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - 추가할 수 있는 멤버 리스트
 struct AddMemberListCell: View {
     
     var user: Friend
@@ -30,7 +31,7 @@ struct AddMemberListCell: View {
             VStack(alignment:.leading){
                 Text(self.user.nickname)
                     .font(.system(size: 15))
-                Text("#\(123/*self.user.id*/)")
+                Text("#\(123)")
                     .font(.system(size: 13))
             }
             Spacer()
@@ -52,6 +53,7 @@ struct AddMemberListCell: View {
         }
     }
 }
+
 
 
 

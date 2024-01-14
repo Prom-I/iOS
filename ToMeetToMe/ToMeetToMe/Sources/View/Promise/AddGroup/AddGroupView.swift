@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Moya
 
 // MARK: - 그룹 생성 화면
 struct AddGroupView: View {
     
     @State private var searchText = ""
     @State var array = Friend.frinedArray
+    @State var users:[Friend] = []
     @State var groupMemberList:[Friend] = []
     
     let pub = NotificationCenter.default.publisher(for: NSNotification.Name("editMemberList"))
@@ -27,10 +29,12 @@ struct AddGroupView: View {
 
                 SearchBar(text: $searchText)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
-
-                
-                Header(text:"친구 목록 \(array.count)")
-                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                    .onChange(of: searchText, perform: { newText in
+                        users.removeAll()
+                        if (!searchText.isEmpty && searchText.count >= 2) {
+                            loadSearchUsers(nickName: newText)
+                        }
+                    })
                 
                 ScrollView(.vertical) {
                     LazyVStack(alignment: .leading, spacing: 15) {
@@ -38,6 +42,14 @@ struct AddGroupView: View {
                             searchText.isEmpty || friend.nickname.localizedCaseInsensitiveContains(searchText)
                         }) { friend in                            
                             AddMemberListCell(user: friend)
+                        }
+                    }
+                    
+                    LazyVStack(alignment: .leading, spacing: 15) {
+                        ForEach(users.filter { user in
+                            searchText.isEmpty || user.nickname.localizedCaseInsensitiveContains(searchText)
+                        }) { user in
+                            AddMemberListCell(user: user)
                         }
                     }
                 }
@@ -91,24 +103,28 @@ struct AddGroupView: View {
         }
         groupMemberList.sort()
     }
+    
+    func loadSearchUsers(nickName: String) {
+        let provider = MoyaProvider<ToMeetToMeAPI>()
+        provider.request(.userByNickname(nickName)) { result in
+            switch result {
+                case let .success(response):
+                guard var result = try? response.map([Friend].self) else {
+                    return
+                }
+                
+                print("result:\(result)")
+                result.sort()
+                
+                users = result
+                    
+                case let .failure(error):
+                    print("통신 실패: \(error.localizedDescription)")
+            }
+        }
+    }
 }
 
-struct Header: View {
-    
-    var headerText:String
-    init(text: String) {
-        self.headerText = text
-    }
-    
-    var body: some View {
-        Text(headerText)
-        .font(.system(size: 16))
-        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-        .frame(height: 10)
-        .padding(.leading, 10)
-        .background(Color.white)
-    }
-}
 
 
 

@@ -45,7 +45,10 @@ struct RecommendView: View {
                 
                 HStack {
                     Spacer().frame(width:25)
-                    MeetingInfoView(meetingDate: "08/28 (월)", meetingTime: "09:30", totalMember: unavailableFriends.count + availableFriends.count, availableMember: availableFriends.count)
+                    VStack(spacing:12){
+                        RecommendDateAndTimeView()
+                        AvailableCountView()
+                    }
                    Spacer()
                 }
                 
@@ -67,8 +70,6 @@ struct RecommendView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.mintColor)
                 }
-                
-                
             }
         }
         .frame(width: 340, height: 506)
@@ -79,6 +80,62 @@ struct RecommendView: View {
     }
 }
 
+struct RecommendDateAndTimeView : View {
+    var body: some View {
+        HStack{
+            Text("날짜:")
+                .font(.system(size: 15))
+                .foregroundColor(.black)
+                .fontWeight(.regular)
+            
+            Text("08/28 (월)")
+                .font(.system(size: 15))
+                .foregroundColor(.black)
+                .fontWeight(.bold)
+            Spacer()
+        }
+        
+        HStack {
+            Text("시간:")
+                .font(.system(size: 15))
+                .foregroundColor(.black)
+                .fontWeight(.regular)
+            
+            Text("09:30")
+                .font(.system(size: 15))
+                .foregroundColor(.black)
+                .fontWeight(.bold)
+            Spacer()
+        }
+    }
+}
+
+struct AvailableCountView : View {
+    var body: some View {
+        HStack {
+            Text("인원:")
+                .font(.system(size: 15))
+                .foregroundColor(.black)
+                .fontWeight(.regular)
+            
+            Text("10명 중")
+                .font(.system(size: 15))
+                .foregroundColor(.black)
+                .fontWeight(.regular)
+            
+            Text("5명")
+                .font(.system(size: 15))
+                .foregroundColor(.mintColor)
+                .fontWeight(.bold)
+            
+            Text("가능")
+                .font(.system(size: 15))
+                .foregroundColor(.black)
+                .fontWeight(.regular)
+            Spacer()
+        }
+    }
+}
 
 
 
