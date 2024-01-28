@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailDayScheduleView: View {
     @Binding var shouldShowDetailSchedule: Bool
     @Binding var isShowAddScheduleView: Bool
+    @Binding var isShowSelectCategoryView: Bool
     
 //    init(shouldShowDetailSchedule: Bool = false, isShowAddScheduleView: Bool = false) {
 ////        self.shouldShowDetailSchedule = shouldShowDetailSchedule
@@ -36,8 +37,9 @@ struct DetailDayScheduleView: View {
                 }
                 
                 Button(action: {
-                    shouldShowDetailSchedule = false
-                    isShowAddScheduleView = true
+//                    shouldShowDetailSchedule = false
+//                    isShowAddScheduleView = true
+                    isShowSelectCategoryView = true
                 }) {
                     MainButtonView(buttonTitle: "일정 추가")
                 }

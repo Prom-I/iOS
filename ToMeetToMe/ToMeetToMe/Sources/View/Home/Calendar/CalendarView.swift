@@ -16,6 +16,7 @@ struct CalendarView: View {
     
     @State var shouldShowDetailSchedule: Bool = false
     @State var isShowAddScheduleView: Bool = false
+    @State var isShowSelectCategoryView: Bool = false
     
     init(month: Date = Date(), clickedCurrentMonthDates: Date? = nil) {
         _month = State(initialValue: month)
@@ -28,7 +29,7 @@ struct CalendarView: View {
             calendarGridView
         }
         .popup(isPresented: $shouldShowDetailSchedule) {
-            DetailDayScheduleView(shouldShowDetailSchedule:$shouldShowDetailSchedule, isShowAddScheduleView: $isShowAddScheduleView)
+            DetailDayScheduleView(shouldShowDetailSchedule:$shouldShowDetailSchedule, isShowAddScheduleView: $isShowAddScheduleView, isShowSelectCategoryView: $isShowSelectCategoryView)
         } customize: {
             $0
             .closeOnTapOutside(true)
@@ -38,6 +39,9 @@ struct CalendarView: View {
         } customize: {
             $0
             .closeOnTapOutside(true)
+        }
+        .sheet(isPresented: $isShowSelectCategoryView) {
+            SelectCategoryView()
         }
 
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610F833E2B66F3E30034C52C /* SelectCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F833D2B66F3E30034C52C /* SelectCategoryView.swift */; };
 		616FF7602B0898F80011B7DB /* PromiseConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616FF75F2B0898F80011B7DB /* PromiseConfirmationView.swift */; };
 		618718822AFD3E710011480D /* UserAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618718812AFD3E710011480D /* UserAuthModel.swift */; };
 		618718842AFD3FC50011480D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618718832AFD3FC50011480D /* LoginView.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		610F833D2B66F3E30034C52C /* SelectCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryView.swift; sourceTree = "<group>"; };
 		616FF75F2B0898F80011B7DB /* PromiseConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseConfirmationView.swift; sourceTree = "<group>"; };
 		618718812AFD3E710011480D /* UserAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthModel.swift; sourceTree = "<group>"; };
 		618718832AFD3FC50011480D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			children = (
 				619FADAF2AE51DD100AB5511 /* AddScheduleView.swift */,
 				619FADAD2AE5126200AB5511 /* DetailDayScheduleView.swift */,
+				610F833D2B66F3E30034C52C /* SelectCategoryView.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				86AE6B2A2AE566D40092A1FE /* MainButtonView.swift in Sources */,
 				619FADAE2AE5126200AB5511 /* DetailDayScheduleView.swift in Sources */,
 				619FADB02AE51DD100AB5511 /* AddScheduleView.swift in Sources */,
+				610F833E2B66F3E30034C52C /* SelectCategoryView.swift in Sources */,
 				616FF7602B0898F80011B7DB /* PromiseConfirmationView.swift in Sources */,
 				6187188D2AFDFAED0011480D /* Utilities.swift in Sources */,
 				86AE6B2E2AE567180092A1FE /* SettingProfileView.swift in Sources */,
@@ -689,7 +693,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToMeetToMe/Preview Content\"";
-				DEVELOPMENT_TEAM = 4NBFZ3U79L;
+				DEVELOPMENT_TEAM = T2Q8P9627P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToMeetToMe/Info.plist;
@@ -698,6 +702,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -719,7 +724,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToMeetToMe/Preview Content\"";
-				DEVELOPMENT_TEAM = 4NBFZ3U79L;
+				DEVELOPMENT_TEAM = T2Q8P9627P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToMeetToMe/Info.plist;
@@ -728,6 +733,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
