@@ -3,4 +3,54 @@
    uuid = "F779DA50-6285-4453-AF5B-5E437CB48627"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D54364A7-D90D-4CD0-A88D-68000AABED68"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ToMeetToMe/Sources/View/Home/Calendar/CalendarView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "D54364A7-D90D-4CD0-A88D-68000AABED68 - 6a25754451102039"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in ToMeetToMe.CalendarView.CellView.body.getter : some"
+                  moduleName = "ToMeetToMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joyujin/Desktop/iOS/ToMeetToMe-iOS/ToMeetToMe/ToMeetToMe/Sources/View/Home/Calendar/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "205"
+                  endingLineNumber = "205"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "D54364A7-D90D-4CD0-A88D-68000AABED68 - 3cffcd9b4e09cce0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ToMeetToMe.Schedule) -&gt; Swift.Bool in closure #2 () -&gt; () in ToMeetToMe.CalendarView.CellView.body.getter : some"
+                  moduleName = "ToMeetToMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joyujin/Desktop/iOS/ToMeetToMe-iOS/ToMeetToMe/ToMeetToMe/Sources/View/Home/Calendar/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "206"
+                  endingLineNumber = "206"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

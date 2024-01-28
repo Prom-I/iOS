@@ -13,12 +13,12 @@ struct Schedule: Hashable{
     var endAt: String
     var startAtToDate: Date {
         let dateFormatter = ISO8601DateFormatter()
-        dateFormatter.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
+        dateFormatter.formatOptions = [.withFullDate, .withTime, .withColonSeparatorInTime]
         return dateFormatter.date(from: startAt)!
     }
     var endAtToDate: Date? {
         let dateFormatter = ISO8601DateFormatter()
-        dateFormatter.formatOptions = [.withFullDate, .withTime, .withDashSeparatorInDate, .withColonSeparatorInTime]
+        dateFormatter.formatOptions = [.withFullDate, .withTime, .withColonSeparatorInTime]
         return dateFormatter.date(from: endAt)
     }
     var allDay: Bool
@@ -27,7 +27,7 @@ struct Schedule: Hashable{
     var repeatString : String
     var complete: Bool
     
-    init(name: String, startAt: String, endAt: String, allDay: Bool, memo: String, notification: Bool, repeatString: String, complete: Bool) {
+    init(name: String, startAt: String, endAt: String, allDay: Bool, memo: String, notification: Bool, repeatString: String, complete: Bool=false) {
         self.name = name
         self.startAt = startAt
         self.endAt = endAt
@@ -38,9 +38,13 @@ struct Schedule: Hashable{
         self.complete = complete
     }
     
+    // 날짜가 같은지 비교
     func isSameDate(as date: Date) -> Bool {
         let calendar = Calendar.current
-        return calendar.isDate(startAtToDate, inSameDayAs: date)
+//        let isSame = calendar.isDate(startAtToDate, inSameDayAs: date)
+        let isSame = date.formattedCalendarDayDate == startAtToDate.formattedCalendarDayDate
+        print("캘린더 날짜: \(date), 스케쥴 날짜: \(startAtToDate) ==== \(isSame)")
+        return isSame
     }
 }
 
