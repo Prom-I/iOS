@@ -42,7 +42,17 @@ struct Schedule: Hashable{
     func isSameDate(as date: Date) -> Bool {
         let calendar = Calendar.current
 //        let isSame = calendar.isDate(startAtToDate, inSameDayAs: date)
-        let isSame = date.formattedCalendarDayDate == startAtToDate.formattedCalendarDayDate
+//        let isSame = date.formattedCalendarDayDate == startAtToDate.formattedCalendarDayDate
+        let utcTimeZone = TimeZone(abbreviation: "UTC")!
+
+        let components1 = calendar.dateComponents(in: utcTimeZone, from: date)
+        let components2 = calendar.dateComponents(in: utcTimeZone, from: startAtToDate)
+
+        let isSame = components1.year == components2.year &&
+                      components1.month == components2.month &&
+                      components1.day == components2.day
+
+
         print("캘린더 날짜: \(date), 스케쥴 날짜: \(startAtToDate) ==== \(isSame)")
         return isSame
     }

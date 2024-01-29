@@ -53,7 +53,7 @@ private struct DateAndTimeView: View {
             
             Spacer()
 //            ConfirmationLabelView()
-            FinishLablView()
+            FinishLabelView()
         }
         .padding(.all, 20)
         .overlay{
@@ -80,7 +80,7 @@ private struct ConfirmationLabelView: View {
     }
 }
 
-private struct FinishLablView: View {
+private struct FinishLabelView: View {
     fileprivate var body: some View {
         RoundedRectangle(cornerRadius: 6)
             .fill(Color("textGray"))

@@ -8,7 +8,7 @@
 import SwiftUI
 import PopupView
 
-
+   
 struct CalendarView: View {
     @State private var month: Date = Date.now  // 현재 달
     @State var clickedCurrentMonthDates: Date?
@@ -43,9 +43,9 @@ struct CalendarView: View {
         .sheet(isPresented: $isShowSelectCategoryView) {
             SelectCategoryView()
         }
-
+        
     }
-     
+    
     // < 2023년 10월 >
     // 일 월 화 수 목 금 토
     // 날짜와 요일 표시
@@ -100,35 +100,35 @@ struct CalendarView: View {
         let visibleDaysOfNextMonth = numberOfRows * 7 - (daysInMonth + firstWeekday)
         
         return ScrollView{
-                LazyVGrid(columns: Array(repeating: GridItem(), count: 7), spacing: 4) {
-            ForEach(-firstWeekday ..< daysInMonth + visibleDaysOfNextMonth, id: \.self) { index in
-                Group {
-                    if index > -1 && index < daysInMonth {  // index : 0 ~ 해당 달의 일 수 - 1일 때
-                        let date: Date = getDate(for: index)
-                        
-                        let day = Calendar.current.component(.day, from: date)  // oo(일)
-                        let clicked = clickedCurrentMonthDates == date
-                        let isToday = date.formattedCalendarDayDate == today.formattedCalendarDayDate
-                        
-                        CellView(day: day, date: date, clicked: clicked, isToday: isToday)
-                    }
-                    else if let prevMonthDate = Calendar.current.date(byAdding: .day, value: index + lastDayOfMonthBefore, to: previousMonth()) {
-                        
-                        let day = Calendar.current.component(.day, from: prevMonthDate)
-                        
-                        CellView(day: day, date: prevMonthDate, isCurrentMonthDay: false)
-                    }
-                }.padding(0)
-                .onTapGesture {
-                    if 0 <= index && index < daysInMonth {
-                        let date: Date = getDate(for: index)
-                        print("클릭-\(date)")
-                        clickedCurrentMonthDates = date
-                        shouldShowDetailSchedule = true
-                    }
+            LazyVGrid(columns: Array(repeating: GridItem(), count: 7), spacing: 4) {
+                ForEach(-firstWeekday ..< daysInMonth + visibleDaysOfNextMonth, id: \.self) { index in
+                    Group {
+                        if index > -1 && index < daysInMonth {  // index : 0 ~ 해당 달의 일 수 - 1일 때
+                            let date: Date = getDate(for: index)
+                            
+                            let day = Calendar.current.component(.day, from: date)  // oo(일)
+                            let clicked = clickedCurrentMonthDates == date
+                            let isToday = date.formattedCalendarDayDate == today.formattedCalendarDayDate
+                            CellView(day: day, date: date, clicked: clicked, isToday: isToday)
+                        }
+                        else if let prevMonthDate = Calendar.current.date(byAdding: .day, value: index + lastDayOfMonthBefore, to: previousMonth()) {
+                            
+                            let day = Calendar.current.component(.day, from: prevMonthDate)
+                            
+                            CellView(day: day, date: prevMonthDate, isCurrentMonthDay: false)
+                        }
+                    }.padding(0)
+                        .onTapGesture {
+                            if 0 <= index && index < daysInMonth {
+                                let date: Date = getDate(for: index)
+                                print("클릭-\(date)")
+                                clickedCurrentMonthDates = date
+                                shouldShowDetailSchedule = true
+                            }
+                        }
                 }
-            }
-        }.padding(.horizontal, 8)
+            }.padding(.horizontal, 8)
+
         }
     }
     
@@ -187,7 +187,7 @@ struct CalendarView: View {
                     .padding(.vertical, 2)
                 
                 ZStack(alignment: .top) {
-                        
+                    
                     VStack(spacing: 4) {
                         
                         ForEach(daySchedules, id: \.self) { schedule in
@@ -198,13 +198,19 @@ struct CalendarView: View {
                                 .overlay(Text(schedule.name).font(.system(size: 12)))
                             
                         }
-                      
+                        
                     }.padding(.horizontal, 2)
                 }
                 Spacer()
             }
             .frame(width: 58,height: 120)
             .background(clicked ? Color.gray1 : Color.clear)
+            .onChange(of: date) { newDate in
+                // 뷰의 날짜가 변경될 때마다 daySchedules를 업데이트
+                daySchedules = calendarViewModel.schedules.filter {
+                    $0.isSameDate(as: newDate)
+                }
+            }
             .onAppear {
                 self.daySchedules = calendarViewModel.schedules.filter {
                     $0.isSameDate(as: date)
@@ -220,7 +226,7 @@ private extension CalendarView {
         let components = Calendar.current.dateComponents([.year, .month, .day], from: now)  // 현재 시간을 년도, 월, 일 형식의 날짜로
         return Calendar.current.date(from: components)!
     }
-
+    
     // oooo년 oo월로 바꿔줄 포매터
     static let calendarHeaderDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -249,14 +255,14 @@ private extension CalendarView {
         var dateComponents = DateComponents()
         dateComponents.day = index
         
-//        let timeZone = TimeZone.current
+        //        let timeZone = TimeZone.current
         let timeZone = TimeZone.autoupdatingCurrent
         let offset = Double(timeZone.secondsFromGMT(for: firstDayOfMonth))
         dateComponents.second = Int(offset)
         
         // 특정 해당 oooo년 oo월 1일에서 index일 만큼 더한 날짜 구하기
         let date = calendar.date(byAdding: dateComponents, to: firstDayOfMonth) ?? Date.now
-    
+        
         return date
     }
     
@@ -271,7 +277,7 @@ private extension CalendarView {
         let components = Calendar.current.dateComponents([.year,.month], from: date)
         // 자동으로 월의 1일로 설정됨
         let firstDayOfMonth = Calendar.current.date(from: components)!
-    
+        
         // 일요일부터 1, ~.. 토요일은 7
         return Calendar.current.component(.weekday, from: firstDayOfMonth)
     }

@@ -14,6 +14,7 @@
 		6187188D2AFDFAED0011480D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6187188C2AFDFAED0011480D /* Utilities.swift */; };
 		618718962AFDFC830011480D /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 618718952AFDFC830011480D /* GoogleSignIn */; };
 		618718982AFDFC830011480D /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 618718972AFDFC830011480D /* GoogleSignInSwift */; };
+		619269D12B6763C800D4DD3E /* GroupParticipantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619269D02B6763C800D4DD3E /* GroupParticipantListView.swift */; };
 		619FAD2A2ADBD2B500AB5511 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619FAD292ADBD2B500AB5511 /* AlarmView.swift */; };
 		619FADA62AE4EA8700AB5511 /* PromiseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619FADA52AE4EA8700AB5511 /* PromiseListView.swift */; };
 		619FADA82AE4F74F00AB5511 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619FADA72AE4F74F00AB5511 /* Schedule.swift */; };
@@ -73,6 +74,7 @@
 		618718812AFD3E710011480D /* UserAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthModel.swift; sourceTree = "<group>"; };
 		618718832AFD3FC50011480D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6187188C2AFDFAED0011480D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		619269D02B6763C800D4DD3E /* GroupParticipantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupParticipantListView.swift; sourceTree = "<group>"; };
 		619FAD292ADBD2B500AB5511 /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		619FADA52AE4EA8700AB5511 /* PromiseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseListView.swift; sourceTree = "<group>"; };
 		619FADA72AE4F74F00AB5511 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				619FADA52AE4EA8700AB5511 /* PromiseListView.swift */,
 				616FF75F2B0898F80011B7DB /* PromiseConfirmationView.swift */,
 				61DF8C1C2B1DE05D008AEBF5 /* Group */,
+				619269D02B6763C800D4DD3E /* GroupParticipantListView.swift */,
 			);
 			path = Promise;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				619FADA82AE4F74F00AB5511 /* Schedule.swift in Sources */,
 				619FADAC2AE506D700AB5511 /* Date+extensions.swift in Sources */,
 				619FADAA2AE4F9DA00AB5511 /* String+extensions.swift in Sources */,
+				619269D12B6763C800D4DD3E /* GroupParticipantListView.swift in Sources */,
 				86AE6B202AE563190092A1FE /* FriendListView.swift in Sources */,
 				61DF8BE12B1CBC83008AEBF5 /* CalendarView.swift in Sources */,
 				61B60BE92B430CAF00341802 /* SignInDto.swift in Sources */,
