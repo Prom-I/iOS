@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6108CFFE2B7727A400EF302F /* ConfirmLeaveGroupPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6108CFFD2B7727A400EF302F /* ConfirmLeaveGroupPopupView.swift */; };
+		6108D0142B78F81200EF302F /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6108D0132B78F81200EF302F /* SideMenuView.swift */; };
 		610F833E2B66F3E30034C52C /* SelectCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F833D2B66F3E30034C52C /* SelectCategoryView.swift */; };
 		616FF7602B0898F80011B7DB /* PromiseConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616FF75F2B0898F80011B7DB /* PromiseConfirmationView.swift */; };
 		618718822AFD3E710011480D /* UserAuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618718812AFD3E710011480D /* UserAuthModel.swift */; };
@@ -69,6 +71,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6108CFFD2B7727A400EF302F /* ConfirmLeaveGroupPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmLeaveGroupPopupView.swift; sourceTree = "<group>"; };
+		6108D0132B78F81200EF302F /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		610F833D2B66F3E30034C52C /* SelectCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryView.swift; sourceTree = "<group>"; };
 		616FF75F2B0898F80011B7DB /* PromiseConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseConfirmationView.swift; sourceTree = "<group>"; };
 		618718812AFD3E710011480D /* UserAuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthModel.swift; sourceTree = "<group>"; };
@@ -302,6 +306,8 @@
 				616FF75F2B0898F80011B7DB /* PromiseConfirmationView.swift */,
 				61DF8C1C2B1DE05D008AEBF5 /* Group */,
 				619269D02B6763C800D4DD3E /* GroupParticipantListView.swift */,
+				6108CFFD2B7727A400EF302F /* ConfirmLeaveGroupPopupView.swift */,
+				6108D0132B78F81200EF302F /* SideMenuView.swift */,
 			);
 			path = Promise;
 			sourceTree = "<group>";
@@ -532,11 +538,13 @@
 				61AF912A2AD47776009563E3 /* HomeView.swift in Sources */,
 				86AE6B282AE566BD0092A1FE /* GropuListView.swift in Sources */,
 				61DF8BE32B1CBC8D008AEBF5 /* CalendarViewModel.swift in Sources */,
+				6108CFFE2B7727A400EF302F /* ConfirmLeaveGroupPopupView.swift in Sources */,
 				86AE6B062ADBD5C10092A1FE /* AddMemberListCell.swift in Sources */,
 				61B60BEB2B430D3800341802 /* NetworkService.swift in Sources */,
 				86AE6AF82ADBCE050092A1FE /* AddFriendView.swift in Sources */,
 				61AF91272AD4775B009563E3 /* MyTabView.swift in Sources */,
 				61AF91352AD53E07009563E3 /* Friend.swift in Sources */,
+				6108D0142B78F81200EF302F /* SideMenuView.swift in Sources */,
 				86AE6AFD2ADBCE350092A1FE /* BackButton.swift in Sources */,
 				86C4FC832B137F65006878F4 /* RecommendView.swift in Sources */,
 				61AF912C2AD4778A009563E3 /* PromiseView.swift in Sources */,

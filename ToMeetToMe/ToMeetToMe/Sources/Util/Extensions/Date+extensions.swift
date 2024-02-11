@@ -9,13 +9,13 @@ import Foundation
 
 extension Date {
     // 현재 시간
-    static var now: Date {
-        var date = Date()
-        let timezone = TimeZone.autoupdatingCurrent
-        let secondsFromGMT = timezone.secondsFromGMT(for: date)
-        let localizedDate = date.addingTimeInterval(TimeInterval(secondsFromGMT))
-        return localizedDate
-    }
+//    static var now: Date {
+//        let date = Date()
+//        let timezone = TimeZone.autoupdatingCurrent
+//        let secondsFromGMT = timezone.secondsFromGMT(for: date)
+//        let localizedDate = date.addingTimeInterval(TimeInterval(secondsFromGMT))
+//        return localizedDate
+//    }
     
     static let calendarDayDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
